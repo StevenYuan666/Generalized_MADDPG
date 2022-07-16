@@ -12,7 +12,7 @@ class TaskSampler:
         self.num_agents = num_agents
         self.batch_size = batch_size
 
-    def sample(self, num_tasks):
+    def sample(self, num_tasks, input_shape):
         random.seed(int(time.time()))
         tasks = []
         for _ in range(num_tasks):
@@ -20,7 +20,7 @@ class TaskSampler:
             args = copy.copy(self.args)
             args.scenario_name = scenario
             tasks.append(Task(scenario_name=scenario, num_agents=self.num_agents, batch_size=self.batch_size,
-                              args=args))
+                              args=args, input_shape=input_shape))
 
         random.shuffle(tasks)
         return tasks
