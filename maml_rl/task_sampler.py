@@ -12,7 +12,7 @@ class TaskSampler:
         self.num_agents = num_agents
         self.batch_size = batch_size
 
-    def sample(self, num_tasks):
+    def sample(self, num_tasks, input_shape):
         random.seed(int(time.time()))
         tasks = []
 
