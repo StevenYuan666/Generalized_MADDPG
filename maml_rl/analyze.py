@@ -44,5 +44,58 @@ def analyze():
     plt.show()
 
 
+def test():
+    path = "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/model/"
+    load1 = np.load(path + "simple_test_load1/returns.pkl.npy")[:40]
+    load2 = np.load(path + "simple_test_load2/returns.pkl.npy")[:40]
+    load3 = np.load(path + "simple_test_load3/returns.pkl.npy")[:40]
+    load4 = np.load(path + "simple_test_load4/returns.pkl.npy")[:40]
+    load5 = np.load(path + "simple_test_load5/returns.pkl.npy")[:40]
+    unload1 = np.load(path + "simple_test_unload1/returns.pkl.npy")[:40]
+    unload2 = np.load(path + "simple_test_unload2/returns.pkl.npy")[:40]
+    unload3 = np.load(path + "simple_test_unload3/returns.pkl.npy")[:40]
+    unload4 = np.load(path + "simple_test_unload4/returns.pkl.npy")[:40]
+    unload5 = np.load(path + "simple_test_unload5/returns.pkl.npy")[:40]
+
+    x = np.arange(40)
+    load_returns = np.mean([load1, load2, load3, load4, load5], axis=0)
+    unload_returns = np.mean([unload1, unload2, unload3, unload4, unload5], axis=0)
+
+    fig, (ax1, ax2) = plt.subplots(2, 2, figsize=(15, 10))
+    ax1[0].plot(x, load_returns, label="load pre-trained meta model")
+    ax1[0].plot(x, unload_returns, label="unload pre-trained meta model")
+    ax1[1].plot(x, smooth(load_returns), label="load pre-trained meta model")
+    ax1[1].plot(x, smooth(unload_returns), label="unload pre-trained meta model")
+    ax1[0].set_xlabel("episode * 10")
+    ax1[1].set_xlabel("episode * 10")
+    ax1[0].set_ylabel('validation returns')
+    ax1[1].set_ylabel('smoothed validation returns')
+    ax1[0].legend(loc='lower right')
+    ax1[1].legend(loc='lower right')
+
+    _, _, bars1 = ax2[0].errorbar(x, load_returns, xerr=None,
+                                  yerr=np.std(load_returns, axis=0), label="load pre-trained meta model")
+    _, _, bars2 = ax2[0].errorbar(x, unload_returns, xerr=None,
+                                  yerr=np.std(unload_returns, axis=0), label="unload pre-trained meta model")
+    [bar.set_alpha(0.3) for bar in bars1]
+    [bar.set_alpha(0.3) for bar in bars2]
+
+    _, _, bars3 = ax2[1].errorbar(x, smooth(load_returns), xerr=None,
+                                  yerr=np.std(smooth(load_returns), axis=0), label="load pre-trained meta model")
+    _, _, bars4 = ax2[1].errorbar(x, smooth(unload_returns), xerr=None,
+                                  yerr=np.std(smooth(unload_returns), axis=0), label="unload pre-trained meta model")
+    [bar.set_alpha(0.3) for bar in bars3]
+    [bar.set_alpha(0.3) for bar in bars4]
+    ax2[0].set_xlabel("episode * 10")
+    ax2[1].set_xlabel("episode * 10")
+    ax2[0].set_ylabel('validation returns')
+    ax2[1].set_ylabel('smoothed validation returns')
+    ax2[0].legend(loc='lower right')
+    ax2[1].legend(loc='lower right')
+
+    fig.suptitle("Averaged on five runs on test scenario", fontsize=16)
+    plt.show()
+
+
 if __name__ == "__main__":
-    analyze()
+    test()

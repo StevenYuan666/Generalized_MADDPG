@@ -4,6 +4,7 @@ from maddpg.actor_critic import Critic
 import numpy as np
 import common.utils as me
 import time
+from task import Task
 
 
 class MetaLearner:
@@ -27,7 +28,7 @@ class MetaLearner:
         self.total_training_step = 20000
         self.update_times = 1000
         self.episode_limit = 100
-        self.num_tasks = 4
+        self.num_tasks = 3
         self.save_rate = 10
 
     def train(self):
@@ -74,3 +75,26 @@ class MetaLearner:
                 print("and successfully saved")
 
             print("Meta Update: " + str(i + 1), "\n\tinner_batch_avg_validation_return: " + str(np.mean(returns)))
+
+    def test(self):
+        self.centralized_q.load_state_dict(torch.load('./MAML_result/centralized_q_params.pth'))
+        t = self.task_sampler.sample_test()
+        for time_step in range(self.update_times):
+            total_q_loss = None
+
+            for a in t.agents:
+                if time_step == 0:
+                    a.policy.critic_target_network.load_state_dict(self.centralized_q.state_dict())
+                a.policy.critic_network.load_state_dict(self.centralized_q.state_dict())
+            # inner training
+            task_q_loss = t.run(time_step=time_step, centralized_q=self.centralized_q)
+            if total_q_loss is None:
+                total_q_loss = task_q_loss
+            else:
+                total_q_loss = total_q_loss.add(task_q_loss)
+            if total_q_loss is not None:
+                self.centralized_q_optim.zero_grad()
+                total_q_loss.backward()
+                self.centralized_q_optim.step()
+        r = t.evaluate()
+        return r
