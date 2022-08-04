@@ -42,6 +42,12 @@ class MADDPG:
             os.mkdir(self.model_path)
 
         # 加载模型
+
+        # path of meta model
+        # path = "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/maml_rl/MAML_result/centralized_q_params.pth"
+        # self.critic_network.load_state_dict(torch.load(path))
+        # self.critic_target_network.load_state_dict(torch.load(path))
+
         if os.path.exists(self.model_path + '/actor_params.pkl'):
             self.actor_network.load_state_dict(torch.load(self.model_path + '/actor_params.pkl'))
             self.critic_network.load_state_dict(torch.load(self.model_path + '/critic_params.pkl'))
