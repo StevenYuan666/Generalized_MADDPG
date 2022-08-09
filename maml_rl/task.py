@@ -15,7 +15,7 @@ def make_env(scenario_name, benchmark=False):
 
 
 class Task:
-    def __init__(self, scenario_name, num_agents, batch_size, args, num_workers=mp.cpu_count(), benchmark=False):
+    def __init__(self, scenario_name, num_agents, batch_size, args, input_shape=0, num_workers=mp.cpu_count(), benchmark=False, ):
         self.bk_args = args
         self.scenario_name = scenario_name
         self.batch_size = batch_size
@@ -35,8 +35,9 @@ class Task:
         self.env, self.args = me.make_env(args=args)
         self.buffer = Buffer(args=self.args)
         self.state = None
-        self.agents = [Agent(agent_id=agent_id, args=self.args) for agent_id in range(self.args.n_agents)]
-
+        self.input_shape = input_shape
+        self.agents = [Agent(agent_id=agent_id, args=args, input_shape=self.input_shape) for agent_id in range(self.args.n_agents)]
+        self.evaluate_rate=100
     '''
     # not used for now
     def sample(self, params=None, gamma=0.95, device='cpu'):
@@ -105,8 +106,8 @@ class Task:
                 else:
                     task_q_loss = task_q_loss.add(q_loss)
 
-        if time_step > 0 and time_step % self.evaluate_rate == 0 and outer_time % (self.evaluate_rate/10) == 0:
-            inner_returns.append(self.evaluate())
+        # if time_step > 0 and time_step % self.evaluate_rate == 0 and outer_time % (self.evaluate_rate/10) == 0:
+        #     inner_returns.append(self.evaluate())
         
         return inner_returns, task_q_loss
 
@@ -114,7 +115,7 @@ class Task:
         returns = []
         for episode in range(self.args.evaluate_episodes):
             # reset the environment
-            s = self.evaluate_env.reset()
+            s = self.env.reset()
             rewards = 0
             for time_step in range(self.args.evaluate_episode_len):
                 # self.env.render() 为了跑的快一点，先不要渲染了。
@@ -125,7 +126,7 @@ class Task:
                         actions.append(action)
                 for i in range(self.args.n_agents, self.args.n_players):
                     actions.append([0, np.random.rand() * 2 - 1, 0, np.random.rand() * 2 - 1, 0])
-                s_next, r, done, info = self.evaluate_env.step(actions)
+                s_next, r, done, info = self.env.step(actions)
                 rewards += r[0]
                 s = s_next
             returns.append(rewards)
