@@ -61,3 +61,18 @@ def make_env(args):
     args.high_action = 1
     args.low_action = -1
     return env, args
+
+
+def make_overcook_env(args):
+    from overcooked_ai.src.overcooked_ai_py.env import OverCookedEnv
+    env = OverCookedEnv(scenario=args.scenario_name, episode_length=args.max_episode_len)
+
+    args.n_players = env.n  # 包含敌人的所有玩家个数
+    args.n_agents = env.n - args.num_adversaries  # 需要操控的玩家个数，虽然敌人也可以控制，但是双方都学习的话需要不同的算法
+    args.obs_shape = [env.observation_space.n for _ in range(args.n_agents)]  # 每一维代表该agent的obs维度
+    action_shape = [env.action_space.n for _ in range(args.n_agents)]
+
+    args.action_shape = action_shape[:args.n_agents]  # 每一维代表该agent的act维度
+    args.high_action = 1
+    args.low_action = -1
+    return env, args
