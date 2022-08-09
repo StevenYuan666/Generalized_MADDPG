@@ -1,4 +1,4 @@
-from runner_maddpg import Runner
+from runner import Runner
 from common.arguments import get_args
 from common.utils import make_env
 import numpy as np
@@ -10,6 +10,9 @@ import matplotlib
 if __name__ == '__main__':
     # get the params
     args = get_args()
+    seed=[0,100,200,300,400]
+    np.random.seed(seed[args.run_index])
+    torch.manual_seed(seed[args.run_index])
     env, args = make_env(args)
     runner = Runner(args, env)
     matplotlib.use("Agg") # avoid "fail to allcoate bitmap"

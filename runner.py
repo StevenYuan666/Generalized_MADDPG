@@ -50,7 +50,7 @@ class Runner:
                 for agent in self.agents:
                     other_agents = self.agents.copy()
                     other_agents.remove(agent)
-                    agent.learn(transitions, other_agents)
+                    agent.learn(transitions, other_agents) # learn proces
             if time_step > 0 and time_step % self.args.evaluate_rate == 0:
                 returns.append(self.evaluate())
                 plt.figure()
@@ -60,7 +60,15 @@ class Runner:
                 plt.savefig(self.save_path + '/plt.png', format='png')
             self.noise = max(0.05, self.noise - 0.0000005)
             self.epsilon = max(0.05, self.epsilon - 0.0000005)
-            np.save(self.save_path + '/returns.pkl', returns)
+            
+            if self.args.load_meta == 1:
+                index = str(self.args.run_index)
+                np.save(self.save_path + '/load_meta_' + index +'/returns.pkl', returns)
+                
+            else:
+                index = str(self.args.run_index)
+                np.save(self.save_path + '/no_meta_'+ index +'/returns.pkl', returns)
+
 
     def evaluate(self):
         returns = []

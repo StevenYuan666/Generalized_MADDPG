@@ -23,7 +23,7 @@ class Actor(nn.Module):
 
 
 class Critic(nn.Module):
-    def __init__(self, args, input_shape=0):
+    def __init__(self, args, input_shape=72):
         super(Critic, self).__init__()
         self.max_action = args.high_action if hasattr(args, "high_action") else 1
         self.input_shape = input_shape

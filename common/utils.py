@@ -40,9 +40,9 @@ def make_env(args):
     scenario = scenarios.load(args.scenario_name + ".py").Scenario()
 
     # create world
-    world = scenario.make_world()
+    world = scenario.make_world(args.run_index)
     # create multiagent environment
-    env = MultiAgentEnv(world, scenario.reset_world, scenario.reward, scenario.observation)
+    env = MultiAgentEnv(world, args, scenario.reset_world, scenario.reward, scenario.observation)
     # env = MultiAgentEnv(world)
     args.n_players = env.n  # 包含敌人的所有玩家个数
     args.n_agents = env.n - args.num_adversaries  # 需要操控的玩家个数，虽然敌人也可以控制，但是双方都学习的话需要不同的算法
