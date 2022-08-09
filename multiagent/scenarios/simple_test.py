@@ -1,10 +1,14 @@
 import numpy as np
 from multiagent.core import World, Agent, Landmark
 from multiagent.scenario import BaseScenario
-
+np.random.seed(0)
 # 两个人 一个人能说，另一个只能听，每个人都有自己的目标，并且不能撞上
+
 class Scenario(BaseScenario):
-    def make_world(self):
+    def make_world(self, run_index):
+        seed=[0,1,2,3,4]
+        np.random.seed(seed[run_index])
+
         world = World()
         # set any world properties first
         world.dim_c = 3
@@ -33,7 +37,10 @@ class Scenario(BaseScenario):
         self.reset_world(world)
         return world
 
-    def reset_world(self, world):
+    def reset_world(self, world, run_index=None):
+        # if run_index != None:
+        #     seed=[0,1,2,3,4]
+        #     np.random.seed(seed[run_index])
         # assign goals to agents
         for agent in world.agents:
             agent.goal_a = None

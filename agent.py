@@ -5,7 +5,7 @@ from maddpg.maddpg import MADDPG
 
 
 class Agent:
-    def __init__(self, agent_id, args, input_shape=0):
+    def __init__(self, agent_id, args, input_shape=72):
         self.args = args
         self.agent_id = agent_id
         self.policy = MADDPG(args, agent_id, input_shape)
