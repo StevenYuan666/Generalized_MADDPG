@@ -13,10 +13,10 @@ if __name__ == '__main__':
 
     seed=[0,100,200,300,400]
     random.seed(0)
-    np.random.seed(seed[args.run_index])
-    torch.manual_seed(seed[args.run_index])
-    # env, args = make_env(args)
-    env, args = make_overcook_env(args)
+    np.random.seed(0)
+    torch.manual_seed(0)
+    env, args = make_env(args)
+    # env, args = make_overcook_env(args)
     runner = Runner(args, env)
    
     np.random.seed(0)

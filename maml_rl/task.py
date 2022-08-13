@@ -69,7 +69,7 @@ class Task:
 
         return episodes
     '''
-    def run(self, outer_time, time_step, centralized_q, inner_returns):
+    def run(self, time_step, centralized_q):
         returns = 0
         # reset the environment
         if time_step % self.episode_limit == 0:
@@ -109,7 +109,7 @@ class Task:
         # if time_step > 0 and time_step % self.evaluate_rate == 0 and outer_time % (self.evaluate_rate/10) == 0:
         #     inner_returns.append(self.evaluate())
         
-        return inner_returns, task_q_loss
+        return task_q_loss
 
     def evaluate(self):
         returns = []
