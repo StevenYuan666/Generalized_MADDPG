@@ -12,11 +12,11 @@ class MADDPG:
         self.input_shape = input_shape
         # create the network
         self.actor_network = Actor(args, agent_id)
-        self.critic_network = Critic(args, self.input_shape)
+        self.critic_network = Critic(args)
 
         # build up the target network
         self.actor_target_network = Actor(args, agent_id)
-        self.critic_target_network = Critic(args, self.input_shape)
+        self.critic_target_network = Critic(args)
 
         # load the weights into the target networks
         self.actor_target_network.load_state_dict(self.actor_network.state_dict())

@@ -25,6 +25,6 @@ def test():
 
 
 if __name__ == '__main__':
-    # main()
+    main()
     # print("Vanilla MADDPG model: ", test(load=False))
-    print("Load pre-trained meta-model:", test())
+    # print("Load pre-trained meta-model:", test())
