@@ -80,6 +80,8 @@ class Task(object):
         self.video_recorder = VideoRecorder(self.work_dir if cfg.save_video else None)
         time_step = 0
         self.obs = None
+        self.mse_loss = torch.nn.MSELoss()
+        self.done = True
 
     def evaluate(self):
         average_episode_reward = 0
@@ -99,22 +101,23 @@ class Task(object):
                 episode_step += 1
 
             average_episode_reward += episode_reward
+
+        average_episode_reward /= self.cfg.num_eval_episodes
         return average_episode_reward
         # self.video_recorder.save(f'{time_step}.mp4')
         #
-        # average_episode_reward /= self.cfg.num_eval_episodes
         # self.logger.log('eval/episode_reward', average_episode_reward, time_step)
         # self.logger.dump(time_step)
 
     def run(self, time_step, centralized_q):
 
-        done = True
-        if time_step == 0 or time_step % self.cfg.episode_length == 0:
-
+        if (time_step % self.cfg.eval_frequency) == 0 or self.done:
             self.obs = self.env.reset()
 
-            self.ou_percentage = max(0, self.ou_exploration_steps - (time_step - self.num_seed_steps)) / self.ou_exploration_steps
-            self.agent.scale_noise(self.ou_final_scale + (self.ou_init_scale - self.ou_final_scale) * self.ou_percentage)
+            self.ou_percentage = max(0, self.ou_exploration_steps - (
+                        time_step - self.num_seed_steps)) / self.ou_exploration_steps
+            self.agent.scale_noise(
+                self.ou_final_scale + (self.ou_init_scale - self.ou_final_scale) * self.ou_percentage)
             self.agent.reset_noise()
 
         if time_step < self.cfg.num_seed_steps:
@@ -125,61 +128,39 @@ class Task(object):
             agent_actions = self.agent.act(agent_observation, sample=True)
             action = agent_actions
 
-        if time_step >= self.cfg.num_seed_steps and time_step >= self.agent.batch_size:
+        if (time_step >= self.cfg.num_seed_steps) and (time_step >= self.agent.batch_size):
             self.agent.update(self.replay_buffer, self.logger, time_step)
 
-        next_obs, rewards, done, info = self.env.step(action)
+        next_obs, rewards, self.done, info = self.env.step(action)
 
         task_q_loss = None
-        if time_step >= self.cfg.num_seed_steps:
-            agent_observation = torch.from_numpy(agent_observation)
-            agent_actions = torch.from_numpy(agent_actions)
+        if len(self.replay_buffer) > self.agent.batch_size:
+            sample = self.replay_buffer.sample(batch_size=self.agent.batch_size, nth=self.agent.agent_index)
+            obses, actions, rewards, next_obses, dones = sample
             if self.discrete_action:
-                agent_actions = to_onehot(agent_actions)
-            critic_in = torch.cat((agent_observation, agent_actions), dim=1).view(1, -1)
+                actions = number_to_onehot(actions)
+            critic_in = torch.cat((obses, actions), dim=2).view(self.agent.batch_size, -1)
             for a in self.agent.agents:
                 target_q = a.critic(critic_in.float())
                 q_value = centralized_q(critic_in.float())
-                q_loss = (target_q - q_value).pow(2).mean()
+                q_loss = self.mse_loss(q_value, target_q)
                 if task_q_loss is None:
                     task_q_loss = q_loss
                 else:
                     task_q_loss = task_q_loss.add(q_loss)
 
         rewards = np.array(info['shaped_r_by_agent']).reshape(-1, 1)
+        # if rewards[0][0] > 0: print(rewards[0])
 
-        if time_step + 1 % self.env.episode_length == 0:
-            done = True
+        if (time_step + 1) % self.env.episode_length == 0:
+            self.done = True
 
         if self.discrete_action: action = action.reshape(-1, 1)
 
-        dones = np.array([done for _ in self.env.agents]).reshape(-1, 1)
+        dones = np.array([self.done for _ in self.env.agents]).reshape(-1, 1)
 
         self.replay_buffer.add(self.obs, action, rewards, next_obs, dones)
 
         self.obs = next_obs
 
         return task_q_loss
-
-def to_onehot(X):
-    is_batch = X.dim() == 3
-    is_torch = type(X) == torch.Tensor
-
-    if is_batch:
-        num_agents = X.shape[1]
-        X = X.reshape(-1, 1)
-
-    shape = (X.shape[0], 6)
-    one_hot = np.zeros(shape)
-    rows = np.arange(X.shape[0])
-
-    positions = X.reshape(-1).cpu().detach().numpy().astype(np.int)
-    one_hot[rows, positions] = 1.
-
-    if is_batch:
-        one_hot = one_hot.reshape(-1, num_agents, int(X.max() + 1))
-
-    if is_torch:
-        one_hot = torch.Tensor(one_hot).to(X.device)
-
-    return one_hot

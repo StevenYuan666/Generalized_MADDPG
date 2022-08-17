@@ -20,7 +20,7 @@ class MetaLearner:
         self.centralized_q_optim = torch.optim.Adam(self.centralized_q.parameters(), lr=self.outer_lr)
         self.train_step = 0
         self.total_training_step = 20000
-        self.update_times = 50000
+        self.update_times = 20000
         self.episode_limit = 500
         self.num_tasks = 4
         self.save_rate = 10
@@ -40,10 +40,7 @@ class MetaLearner:
                     # inner training
                     task_q_loss = t.run(time_step=time_step, centralized_q=self.centralized_q)
                     if total_q_loss is None:
-                        if task_q_loss is None:
-                            total_q_loss = None
-                        else:
-                            total_q_loss = task_q_loss
+                        total_q_loss = task_q_loss
                     else:
                         total_q_loss = total_q_loss.add(task_q_loss)
                 if total_q_loss is not None:
@@ -86,6 +83,7 @@ class MetaLearner:
             if total_q_loss is not None:
                 self.centralized_q_optim.zero_grad()
                 total_q_loss.backward()
+                torch.nn.utils.clip_grad_norm_(self.centralized_q.parameters(), 0.5)
                 self.centralized_q_optim.step()
         r = t.evaluate()
         return r
