@@ -45,7 +45,6 @@ class MetaLearner:
                     else:
                         total_q_loss = total_q_loss.add(task_q_loss)
                 if total_q_loss is not None:
-                    print(total_q_loss)
                     self.centralized_q_optim.zero_grad()
                     total_q_loss.backward()
                     torch.nn.utils.clip_grad_norm_(self.centralized_q.parameters(), 0.5)
