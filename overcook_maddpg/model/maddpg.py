@@ -5,6 +5,7 @@ from utils.misc import soft_update
 
 from model.DDPGAgent import DDPGAgent
 from model.utils.model import *
+from copy import deepcopy
 
 
 class MADDPG(object):
@@ -55,6 +56,7 @@ class MADDPG(object):
 
         sample = replay_buffer.sample(self.batch_size, nth=self.agent_index)
         obses, actions, rewards, next_obses, dones = sample
+        to_return = []
 
         if self.discrete_action:  actions = number_to_onehot(actions)
 
@@ -75,6 +77,7 @@ class MADDPG(object):
                 target_next_q = rewards[:, agent_i] + (1 - dones[:, agent_i]) * self.gamma * agent.target_critic(target_critic_in)
 
             critic_in = torch.cat((obses, actions), dim=2).view(self.batch_size, -1)
+            to_return.append(deepcopy(critic_in))
             main_q = agent.critic(critic_in)
 
             critic_loss = self.mse_loss(main_q, target_next_q)
@@ -108,6 +111,7 @@ class MADDPG(object):
             agent.policy_optimizer.step()
 
         self.update_all_targets()
+        return to_return
 
     def update_all_targets(self):
         for agent in self.agents:

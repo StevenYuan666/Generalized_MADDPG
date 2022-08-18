@@ -78,12 +78,17 @@ class Task(object):
                                           device=self.device)
 
         self.video_recorder = VideoRecorder(self.work_dir if cfg.save_video else None)
-        time_step = 0
         self.obs = None
         self.mse_loss = torch.nn.MSELoss()
         self.done = True
+        self.step = 0
+        self.episode_reward = 0
+        self.episode_step = 0
+        self.episode = 0
 
     def evaluate(self):
+        print("TRAINING:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(self.episode),
+              "Rewards: ", str(self.episode_reward))
         average_episode_reward = 0
 
         # self.video_recorder.init(enabled=True)
@@ -96,10 +101,12 @@ class Task(object):
             while not done:
                 action = self.agent.act(obs, sample=False)
                 obs, rewards, done, info = self.env.step(action)
+                print(done)
                 rewards = np.array(info['shaped_r_by_agent']).reshape(-1, 1)
                 episode_reward += sum(rewards)[0]
                 episode_step += 1
-
+            print("VALIDATION:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(episode),
+                  "Rewards: ", str(episode_reward))
             average_episode_reward += episode_reward
 
         average_episode_reward /= self.cfg.num_eval_episodes
@@ -109,58 +116,62 @@ class Task(object):
         # self.logger.log('eval/episode_reward', average_episode_reward, time_step)
         # self.logger.dump(time_step)
 
-    def run(self, time_step, centralized_q):
+    def run(self, centralized_q):
+        if self.step < self.cfg.num_train_steps + 1:
+            if self.done or self.step % self.cfg.eval_frequency == 0:
+                self.obs = self.env.reset()
 
-        if (time_step % self.cfg.eval_frequency) == 0 or self.done:
-            self.obs = self.env.reset()
+                self.ou_percentage = max(0, self.ou_exploration_steps - (
+                        self.step - self.num_seed_steps)) / self.ou_exploration_steps
+                self.agent.scale_noise(
+                    self.ou_final_scale + (self.ou_init_scale - self.ou_final_scale) * self.ou_percentage)
+                self.agent.reset_noise()
+                if self.episode != 0:
+                    print("TRAINING:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(self.episode),
+                          "Rewards: ", str(self.episode_reward))
+                self.episode_reward = 0
+                self.episode_step = 0
+                self.episode += 1
 
-            self.ou_percentage = max(0, self.ou_exploration_steps - (
-                        time_step - self.num_seed_steps)) / self.ou_exploration_steps
-            self.agent.scale_noise(
-                self.ou_final_scale + (self.ou_init_scale - self.ou_final_scale) * self.ou_percentage)
-            self.agent.reset_noise()
+            if self.step < self.cfg.num_seed_steps:
+                action = np.array([self.env.action_space.sample() for _ in self.env_agent_types])
+                if self.discrete_action: action = action.reshape(-1, 1)
+            else:
+                agent_observation = self.obs[self.agent_indexes]
+                agent_actions = self.agent.act(agent_observation, sample=True)
+                action = agent_actions
 
-        if time_step < self.cfg.num_seed_steps:
-            action = np.array([self.env.action_space.sample() for _ in self.env_agent_types])
+            if self.step >= self.agent.batch_size:  # self.step >= self.cfg.num_seed_steps and
+                returned_critic_in = self.agent.update(self.replay_buffer, self.logger, self.step)
+
+            next_obs, rewards, self.done, info = self.env.step(action)
+            rewards = np.array(info['shaped_r_by_agent']).reshape(-1, 1)
+
+            if self.episode_step + 1 == self.env.episode_length:
+                self.done = True
+
+            self.episode_reward += sum(rewards)[0]
+            # if rewards[0][0] > 0: print(rewards[0])
+
+            task_q_loss = None
+            if self.step >= self.agent.batch_size:  # self.step >= self.cfg.num_seed_steps and
+                for i, a in enumerate(self.agent.agents):
+                    target_q = a.critic(returned_critic_in[i]).detach()
+                    q_value = centralized_q(returned_critic_in[i])
+                    q_loss = (target_q - q_value).pow(2).mean()
+                    if task_q_loss is None:
+                        task_q_loss = q_loss
+                    else:
+                        task_q_loss = task_q_loss.add(q_loss)
+
             if self.discrete_action: action = action.reshape(-1, 1)
-        else:
-            agent_observation = self.obs[self.agent_indexes]
-            agent_actions = self.agent.act(agent_observation, sample=True)
-            action = agent_actions
 
-        if (time_step >= self.cfg.num_seed_steps) and (time_step >= self.agent.batch_size):
-            self.agent.update(self.replay_buffer, self.logger, time_step)
+            dones = np.array([self.done for _ in self.env.agents]).reshape(-1, 1)
 
-        next_obs, rewards, self.done, info = self.env.step(action)
+            self.replay_buffer.add(self.obs, action, rewards, next_obs, dones)
 
-        task_q_loss = None
-        if len(self.replay_buffer) > self.agent.batch_size:
-            sample = self.replay_buffer.sample(batch_size=self.agent.batch_size, nth=self.agent.agent_index)
-            obses, actions, rewards, next_obses, dones = sample
-            if self.discrete_action:
-                actions = number_to_onehot(actions)
-            critic_in = torch.cat((obses, actions), dim=2).view(self.agent.batch_size, -1)
-            for a in self.agent.agents:
-                target_q = a.critic(critic_in.float())
-                q_value = centralized_q(critic_in.float())
-                q_loss = self.mse_loss(q_value, target_q)
-                if task_q_loss is None:
-                    task_q_loss = q_loss
-                else:
-                    task_q_loss = task_q_loss.add(q_loss)
+            self.obs = next_obs
+            self.episode_step += 1
+            self.step += 1
 
-        rewards = np.array(info['shaped_r_by_agent']).reshape(-1, 1)
-        # if rewards[0][0] > 0: print(rewards[0])
-
-        if (time_step + 1) % self.env.episode_length == 0:
-            self.done = True
-
-        if self.discrete_action: action = action.reshape(-1, 1)
-
-        dones = np.array([self.done for _ in self.env.agents]).reshape(-1, 1)
-
-        self.replay_buffer.add(self.obs, action, rewards, next_obs, dones)
-
-        self.obs = next_obs
-
-        return task_q_loss
+            return task_q_loss

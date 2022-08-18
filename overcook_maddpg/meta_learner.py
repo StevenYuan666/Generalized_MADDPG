@@ -15,8 +15,7 @@ class MetaLearner:
         self.tau = tau
         # self.to(device)
 
-        self.centralized_q = MLPNetwork(input_dim=204, out_dim=1)
-        self.target_centralized_q = MLPNetwork(input_dim=204, out_dim=1)
+        self.centralized_q = MLPNetwork(input_dim=204, out_dim=1, hidden_dim=64, constrain_out=False)
         self.centralized_q_optim = torch.optim.Adam(self.centralized_q.parameters(), lr=self.outer_lr)
         self.train_step = 0
         self.total_training_step = 20000
@@ -38,7 +37,7 @@ class MetaLearner:
                             a.target_critic.load_state_dict(self.centralized_q.state_dict())
                         a.critic.load_state_dict(self.centralized_q.state_dict())
                     # inner training
-                    task_q_loss = t.run(time_step=time_step, centralized_q=self.centralized_q)
+                    task_q_loss = t.run(centralized_q=self.centralized_q)
                     if total_q_loss is None:
                         total_q_loss = task_q_loss
                     else:
@@ -46,6 +45,7 @@ class MetaLearner:
                 if total_q_loss is not None:
                     self.centralized_q_optim.zero_grad()
                     total_q_loss.backward()
+                    torch.nn.utils.clip_grad_norm_(self.centralized_q.parameters(), 0.5)
                     self.centralized_q_optim.step()
             returns = []
             for t in tasks:
