@@ -85,10 +85,11 @@ class Task(object):
         self.episode_reward = 0
         self.episode_step = 0
         self.episode = 0
+        self.whole_rewards = []
 
     def evaluate(self):
-        print("TRAINING:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(self.episode),
-              "Rewards: ", str(self.episode_reward))
+        # print("TRAINING:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(self.episode),
+        #       "Rewards: ", str(self.episode_reward))
         average_episode_reward = 0
 
         # self.video_recorder.init(enabled=True)
@@ -101,12 +102,11 @@ class Task(object):
             while not done:
                 action = self.agent.act(obs, sample=False)
                 obs, rewards, done, info = self.env.step(action)
-                print(done)
                 rewards = np.array(info['shaped_r_by_agent']).reshape(-1, 1)
                 episode_reward += sum(rewards)[0]
                 episode_step += 1
-            print("VALIDATION:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(episode),
-                  "Rewards: ", str(episode_reward))
+            # print("VALIDATION:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(episode),
+            #       "Rewards: ", str(episode_reward))
             average_episode_reward += episode_reward
 
         average_episode_reward /= self.cfg.num_eval_episodes
@@ -127,8 +127,9 @@ class Task(object):
                     self.ou_final_scale + (self.ou_init_scale - self.ou_final_scale) * self.ou_percentage)
                 self.agent.reset_noise()
                 if self.episode != 0:
-                    print("TRAINING:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(self.episode),
-                          "Rewards: ", str(self.episode_reward))
+                    # print("TRAINING:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(self.episode),
+                    #       "Rewards: ", str(self.episode_reward))
+                    self.whole_rewards.append(self.episode_reward)
                 self.episode_reward = 0
                 self.episode_step = 0
                 self.episode += 1
@@ -158,7 +159,7 @@ class Task(object):
                 for i, a in enumerate(self.agent.agents):
                     target_q = a.critic(returned_critic_in[i]).detach()
                     q_value = centralized_q(returned_critic_in[i])
-                    q_loss = (target_q - q_value).pow(2).mean()
+                    q_loss = self.mse_loss(target_q, q_value)
                     if task_q_loss is None:
                         task_q_loss = q_loss
                     else:

@@ -23,6 +23,7 @@ class MetaLearner:
         self.episode_limit = 500
         self.num_tasks = 4
         self.save_rate = 10
+        self.load_rate = 500
 
     def train(self):
         result = []
@@ -35,7 +36,8 @@ class MetaLearner:
                     for a in t.agent.agents:
                         if time_step == 0:
                             a.target_critic.load_state_dict(self.centralized_q.state_dict())
-                        a.critic.load_state_dict(self.centralized_q.state_dict())
+                        if time_step % self.load_rate == 0:
+                            a.critic.load_state_dict(self.centralized_q.state_dict())
                     # inner training
                     task_q_loss = t.run(centralized_q=self.centralized_q)
                     if total_q_loss is None:
@@ -43,16 +45,19 @@ class MetaLearner:
                     else:
                         total_q_loss = total_q_loss.add(task_q_loss)
                 if total_q_loss is not None:
+                    print(total_q_loss)
                     self.centralized_q_optim.zero_grad()
                     total_q_loss.backward()
                     torch.nn.utils.clip_grad_norm_(self.centralized_q.parameters(), 0.5)
                     self.centralized_q_optim.step()
             returns = []
+            train_rewards = []
             for t in tasks:
                 r = t.evaluate()
                 returns.append(r)
+                train_rewards.append(t.whole_rewards)
 
-            to_save = [i + 1, np.mean(returns), returns]
+            to_save = [i + 1, np.mean(returns), returns, train_rewards]
             result.append(to_save)
 
             if i % self.save_rate == 0:
@@ -61,8 +66,9 @@ class MetaLearner:
                 torch.save(self.centralized_q.state_dict(), '/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/result/centralized_q_params.pth')
                 print("and successfully saved")
 
-            print("Meta Update: " + str(i + 1), "\n\tinner_batch_avg_validation_return: " + str(np.mean(returns))
-                  + " [asymmetric_advantages, cramped_room, coordination_ring, counter_circuit]: " + str(returns))
+            print("Meta Update: " + str(i + 1), "Training_Avg_Rewards: ", np.mean(train_rewards),
+                  "\n\tinner_batch_avg_validation_return: " + str(np.mean(returns))
+                  + str([t.cfg.env for t in tasks]) + ": " + str(returns))
 
     def test(self):
         self.centralized_q.load_state_dict(torch.load('/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/result/centralized_q_params.pth'))
