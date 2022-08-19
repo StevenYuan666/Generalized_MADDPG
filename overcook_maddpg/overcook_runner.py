@@ -1,3 +1,4 @@
+import copy
 import time
 import cv2
 
@@ -145,9 +146,9 @@ class Workspace(object):
                 action = agent_actions
 
             if self.step >= self.cfg.num_seed_steps and self.step >= self.agent.batch_size:
-                self.agent.update(self.replay_buffer, self.logger, self.step)
+                agent_observations, action = self.agent.update(self.replay_buffer, self.logger, self.step)
 
-            next_obs, rewards, done, info = self.env.step(action)
+            next_obs, rewards, done, info = self.env.step(copy.deepcopy(action))
             rewards = np.array(info['shaped_r_by_agent']).reshape(-1, 1)
 
             if episode_step + 1 == self.env.episode_length:

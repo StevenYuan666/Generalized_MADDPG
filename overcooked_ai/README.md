@@ -4,7 +4,7 @@
 
 <p align="center">
   <!-- <img src="overcooked_ai_js/images/screenshot.png" width="350"> -->
-  <img src="./images/layouts.gif" width="100%"> 
+  <img src="images/layouts.gif" width="100%"> 
   <i>5 of the available layouts. New layouts are easy to hardcode or generate programmatically.</i>
 </p>
 

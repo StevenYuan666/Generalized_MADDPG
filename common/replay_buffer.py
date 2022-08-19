@@ -6,6 +6,7 @@ class Buffer:
     def __init__(self, args):
         self.size = args.buffer_size
         self.args = args
+        self.device = args.device
         # memory management
         self.current_size = 0
         # create the buffer to store info

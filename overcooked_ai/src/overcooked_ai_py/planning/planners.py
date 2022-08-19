@@ -674,7 +674,7 @@ class JointMotionPlanner(object):
         # (not on objects and other aspects of state).
         # Also assumes can't deliver more than two orders in one motion goal
         # (otherwise Environment will terminate)
-        from overcooked_ai_py.mdp.overcooked_env import OvercookedEnv
+        from overcooked_ai.src.overcooked_ai_py.mdp.overcooked_env import OvercookedEnv
         dummy_state = OvercookedState.from_players_pos_and_or(joint_start_state, all_orders=self.mdp.start_all_orders)
         env = OvercookedEnv.from_mdp(self.mdp, horizon=200, info_level=int(self.debug)) # Plans should be shorter than 200 timesteps, or something is likely wrong
         successor_state, is_done = env.execute_plan(dummy_state, joint_action_plan)
@@ -1093,7 +1093,7 @@ class MediumLevelActionManager(object):
     # Deprecated.
     # def get_successor_states_fixed_other(self, start_state, other_agent, other_agent_idx):
     #     """
-    #     Get the successor states of a given start state, assuming that the other agent is fixed and will act according to the passed in model
+    #     Get the successor states of a given start state, assuming that the other agent is fixed and will act according to the passed in model_maml
     #     """
     #     if self.mdp.is_terminal(start_state):
     #         return []

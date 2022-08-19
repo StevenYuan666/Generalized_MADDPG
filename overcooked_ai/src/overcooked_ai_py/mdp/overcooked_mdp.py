@@ -947,7 +947,7 @@ class OvercookedGridworld(object):
         for k, v in params_to_overwrite.items():
             curr_val = mdp_config.get(k, None)
             if debug:
-                print("Overwriting mdp layout standard config value {}:{} -> {}".format(k, curr_val, v))
+                print("Overwriting mdp layout standard config_maml value {}:{} -> {}".format(k, curr_val, v))
             mdp_config[k] = v
 
         return OvercookedGridworld(**mdp_config)

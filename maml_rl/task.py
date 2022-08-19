@@ -7,11 +7,11 @@ from maml_rl.BatchEpisode import BatchEpisodes
 from agent import Agent
 from common.replay_buffer import Buffer
 
-def make_env(scenario_name, benchmark=False):
-    def _make_env():
-        return me.make_env(scenario_name=scenario_name, benchmark=benchmark)
-
-    return _make_env
+# def make_env(scenario_name, benchmark=False):
+#     def _make_env():
+#         return me.make_env(scenario_name=scenario_name, benchmark=benchmark)
+#
+#     return _make_env
 
 
 class Task:
@@ -26,6 +26,7 @@ class Task:
         self.noise = args.noise_rate
         self.epsilon = args.epsilon
         self.queue = mp.Queue()
+        self.device = args.device
         # [lambda function]
         # env_factorys = [make_env(scenario_name=scenario_name, benchmark=benchmark) for _ in range(num_workers)]
         # this is the main process manager, and it will be in charge of num_workers sub-processes interacting with
@@ -37,6 +38,7 @@ class Task:
         self.state = None
         self.input_shape = input_shape
         self.agents = [Agent(agent_id=agent_id, args=args, input_shape=self.input_shape) for agent_id in range(self.args.n_agents)]
+        # [agent.to(self.device) for agent in self.agents]
         self.evaluate_rate=100
     '''
     # not used for now

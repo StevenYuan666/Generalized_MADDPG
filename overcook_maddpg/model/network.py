@@ -10,7 +10,7 @@ class MLPNetwork(nn.Module):
     MLP network (can be used as value or policy)
     """
 
-    def __init__(self, input_dim, out_dim, hidden_dim=64, activation=F.relu,
+    def __init__(self, input_dim, out_dim, sampler=None, hidden_dim=64, activation=F.relu,
                  constrain_out=False):
         """
         Inputs:

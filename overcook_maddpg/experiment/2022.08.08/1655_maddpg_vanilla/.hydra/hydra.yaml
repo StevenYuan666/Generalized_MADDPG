@@ -31,7 +31,7 @@ hydra:
 
       == Config ==
 
-      Override anything in the config (foo.bar=value)
+      Override anything in the config_maml (foo.bar=value)
 
 
       $CONFIG
@@ -60,7 +60,7 @@ hydra:
       $HYDRA_CONFIG_GROUPS
 
 
-      Use ''--cfg hydra'' to Show the Hydra config.
+      Use ''--cfg hydra'' to Show the Hydra config_maml.
 
       '
     hydra_help: ???
@@ -129,7 +129,7 @@ hydra:
     - path: hydra.conf
       schema: pkg
       provider: hydra
-    - path: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/config
+    - path: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/config_maml
       schema: file
       provider: main
     - path: ''

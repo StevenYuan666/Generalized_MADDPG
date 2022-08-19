@@ -3,18 +3,18 @@ defaults:
 
 # Experiment Settings
 env: asymmetric_advantages
-episode_length: 500
+episode_length: 2000
 discrete_action_space: true
 
 experiment: vanilla
 seed: 0
-num_seed_steps: 10000
+num_seed_steps: 500
 
 num_train_steps: 1e6
 replay_buffer_capacity: 5e4
 
-eval_frequency: 10000
-num_eval_episodes: 3
+eval_frequency: 1000
+num_eval_episodes: 5
 
 common_reward: true
 
@@ -22,7 +22,7 @@ ou_exploration_steps: ${num_train_steps}
 ou_init_scale: 0.3
 ou_final_scale: 0
 
-device: cpu
+device: cuda
 
 # Logging Settings
 log_frequency: 5000

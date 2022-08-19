@@ -8,6 +8,7 @@ import copy
 class Centralized_q(nn.Module):
     def __init__(self, args, task_sampler):
         super(Centralized_q, self).__init__()
+        self.device = args.device
         self.max_action = args.high_action if hasattr(args, "high_action") else 1
         Args=[]
         for scenario in task_sampler.scenarios_names:
@@ -36,7 +37,7 @@ class Centralized_q(nn.Module):
         while True:
             if len(x[0])==self.input_shape:
                 break
-            x = torch.cat((x, torch.tensor([[0]]*256)), dim=1)
+            x = torch.cat((x, torch.tensor([[0]]*256).to(self.device)), dim=1)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = F.relu(self.fc3(x))

@@ -40,7 +40,7 @@ def make_env(args):
     scenario = scenarios.load(args.scenario_name + ".py").Scenario()
 
     # create world
-    world = scenario.make_world(args.run_index)
+    world = scenario.make_world()
     # create multiagent environment
     env = MultiAgentEnv(world, args, scenario.reset_world, scenario.reward, scenario.observation)
     # env = MultiAgentEnv(world)
