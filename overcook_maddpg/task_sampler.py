@@ -7,8 +7,8 @@ import copy
 class TaskSampler:
     def __init__(self, cfg):
         self.cfg = copy.copy(cfg)
-        # self.scenarios_names = ["asymmetric_advantages", "cramped_room", "coordination_ring", "counter_circuit"]
-        self.scenarios_names = ["asymmetric_advantages"]
+        self.scenarios_names = ["asymmetric_advantages", "cramped_room", "coordination_ring", "counter_circuit"]
+        # self.scenarios_names = ["asymmetric_advantages"]
 
     def sample(self):
         random.seed(int(time.time()))

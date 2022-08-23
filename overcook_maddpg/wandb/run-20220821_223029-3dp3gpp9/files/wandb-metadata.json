@@ -1,0 +1,22 @@
+{
+    "os": "macOS-10.16-x86_64-i386-64bit",
+    "python": "3.8.2",
+    "heartbeatAt": "2022-08-22T05:30:29.794486",
+    "startedAt": "2022-08-22T05:30:29.001946",
+    "docker": null,
+    "cpu_count": 8,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py",
+    "codePath": "overcook_maddpg/meta_learner.py",
+    "git": {
+        "remote": "https://github.com/StevenYuan666/Generalized_MADDPG.git",
+        "commit": "aadda0bae7792f3ab8fe55b3efd4610a7452652f"
+    },
+    "email": "ye.yuan3@mail.mcgill.ca",
+    "root": "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG",
+    "host": "yuanyedeMBP",
+    "username": "stevenyuan",
+    "executable": "/Users/stevenyuan/opt/anaconda3/envs/mujoco/bin/python"
+}

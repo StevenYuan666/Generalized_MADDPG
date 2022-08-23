@@ -58,7 +58,7 @@ def number_to_onehot(X):
         num_agents = X.shape[1]
         X = X.reshape(-1, 1)
 
-    shape = (X.shape[0], int(X.max() + 1))
+    shape = (X.shape[0], 6) # int(X.max() + 1)
     one_hot = np.zeros(shape)
     rows = np.arange(X.shape[0])
 
@@ -66,7 +66,7 @@ def number_to_onehot(X):
     one_hot[rows, positions] = 1.
 
     if is_batch:
-        one_hot = one_hot.reshape(-1, num_agents, int(X.max() + 1))
+        one_hot = one_hot.reshape(-1, num_agents, 6) # int(X.max() + 1)
 
     if is_torch:
         one_hot = torch.Tensor(one_hot).to(X.device)
