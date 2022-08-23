@@ -46,7 +46,7 @@ class MADDPG:
 
         # path of meta model_maml
         if self.args.load_meta == 1:
-            path = "E:/New_Generalized_MADDPG/Generalized_MADDPG/maml_rl/MAML_result/centralized_q_params.pth"
+            path = "E:\Project\Generalized_MADDPG\maml_rl\MAML_result\centralized_q_params.pth"
             self.critic_network.load_state_dict(torch.load(path))
             self.critic_target_network.load_state_dict(torch.load(path))
 

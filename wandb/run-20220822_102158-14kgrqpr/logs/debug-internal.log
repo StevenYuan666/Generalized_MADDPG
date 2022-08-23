@@ -1,0 +1,69 @@
+2022-08-22 10:21:58,862 INFO    StreamThr :8908 [internal.py:wandb_internal():93] W&B internal server running at pid: 8908, started at: 2022-08-22 10:21:58.862534
+2022-08-22 10:21:58,863 DEBUG   HandlerThread:8908 [handler.py:handle_request():141] handle_request: status
+2022-08-22 10:21:58,865 DEBUG   SenderThread:8908 [sender.py:send_request():316] send_request: status
+2022-08-22 10:21:58,865 DEBUG   SenderThread:8908 [sender.py:send():302] send: header
+2022-08-22 10:21:58,866 INFO    WriterThread:8908 [datastore.py:open_for_write():75] open: E:\Project\Generalized_MADDPG\wandb\run-20220822_102158-14kgrqpr\run-14kgrqpr.wandb
+2022-08-22 10:21:58,890 DEBUG   SenderThread:8908 [sender.py:send():302] send: run
+2022-08-22 10:21:59,482 ERROR   SenderThread:8908 [internal_api.py:execute():207] 404 response executing GraphQL.
+2022-08-22 10:21:59,482 ERROR   SenderThread:8908 [internal_api.py:execute():208] {"errors":[{"message":"entity aims-high not found during upsertBucket","path":["upsertBucket"]}],"data":{"upsertBucket":null}}
+2022-08-22 10:21:59,895 INFO    WriterThread:8908 [datastore.py:close():279] close: E:\Project\Generalized_MADDPG\wandb\run-20220822_102158-14kgrqpr\run-14kgrqpr.wandb
+2022-08-22 10:21:59,895 INFO    HandlerThread:8908 [handler.py:finish():810] shutting down handler
+2022-08-22 10:21:59,895 ERROR   StreamThr :8908 [internal.py:wandb_internal():165] Thread SenderThread:
+Traceback (most recent call last):
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\lib\retry.py", line 113, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\internal_api.py", line 204, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\vendor\gql-0.2.0\wandb_gql\transport\requests.py", line 39, in execute
+    request.raise_for_status()
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\requests\models.py", line 960, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\apis\normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\internal_api.py", line 1469, in upsert_run
+    **kwargs,
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\lib\retry.py", line 129, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\util.py", line 942, in check_retry_fn
+    return fallback_retry_fn(e)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\util.py", line 889, in no_retry_auth
+    raise CommError("Permission denied, ask the project owner to grant you access")
+wandb.errors.CommError: Permission denied, ask the project owner to grant you access
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\internal_util.py", line 51, in run
+    self._run()
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\internal_util.py", line 102, in _run
+    self._process(record)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\internal.py", line 310, in _process
+    self._sm.send(record)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\sender.py", line 304, in send
+    send_handler(record)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\sender.py", line 782, in send_run
+    self._init_run(run, config_value_dict)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\sender.py", line 822, in _init_run
+    commit=run.git.commit or None,
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\apis\normalize.py", line 61, in wrapper
+    raise CommError(message, err).with_traceback(sys.exc_info()[2])
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\apis\normalize.py", line 25, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\internal_api.py", line 1469, in upsert_run
+    **kwargs,
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\lib\retry.py", line 129, in __call__
+    retry_timedelta_triggered = check_retry_fn(e)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\util.py", line 942, in check_retry_fn
+    return fallback_retry_fn(e)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\util.py", line 889, in no_retry_auth
+    raise CommError("Permission denied, ask the project owner to grant you access")
+wandb.errors.CommError: Permission denied, ask the project owner to grant you access

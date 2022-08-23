@@ -16,8 +16,8 @@ if __name__ == '__main__':
     random.seed(0)
     np.random.seed(seed[args.run_index])
     torch.manual_seed(seed[args.run_index])
-    # env, args = make_env(args)
-    env, args = make_overcook_env(args)
+    env, args = make_env(args)
+    # env, args = make_overcook_env(args)
     runner = Runner(args, env)
    
     np.random.seed(0)

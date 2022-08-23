@@ -64,7 +64,7 @@ class Runner:
             if self.args.load_meta == 1:
                 index = str(self.args.run_index)
                 np.save(self.save_path + '/load_meta_' + index +'/returns.pkl', returns)
-                
+
             else:
                 index = str(self.args.run_index)
                 np.save(self.save_path + '/no_meta_'+ index +'/returns.pkl', returns)
@@ -89,5 +89,5 @@ class Runner:
                 rewards += r[0]
                 s = s_next
             returns.append(rewards)
-            print('Returns is', rewards)
+            # print('Returns is', rewards)
         return sum(returns) / self.args.evaluate_episodes

@@ -13,7 +13,7 @@ def smooth(scalars, weight=0.6):
 
 
 def analyze():
-    result = np.load("MAML_result/training_info.npy")
+    result = np.load("MAML_result/training_info_load=10.npy")
     # inner_result = np.load("./MAML_result/inner_returns.npy")
     x = []
     inner_x=[]
@@ -64,7 +64,7 @@ def smooth(scalars, weight=0.6):
     return smoothed
 
 def test():
-    path = "E:/New_Generalized_MADDPG/Generalized_MADDPG/model_maml/simple_test/"
+    path = "E:/Project/Generalized_MADDPG/model/simple_test/"
     load1 = np.load(path + "load_meta_0/returns.pkl.npy")[:99]
     load2 = np.load(path + "load_meta_1/returns.pkl.npy")[:99]
     load3 = np.load(path + "load_meta_2/returns.pkl.npy")[:99]
@@ -118,4 +118,4 @@ def test():
 
 
 if __name__ == "__main__":
-    analyze()
+    test()

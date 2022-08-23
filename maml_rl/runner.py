@@ -3,6 +3,7 @@ from common.utils import make_env
 from maml_rl.metalearner import MetaLearner
 from maml_rl.task_sampler import TaskSampler
 import numpy as np
+import wandb
 
 
 def main():
@@ -25,6 +26,8 @@ def test():
 
 
 if __name__ == '__main__':
-    main()
+
+    rewards = test()
+    # main()
     # print("Vanilla MADDPG model_maml: ", test(load=False))
     # print("Load pre-trained meta-model_maml:", test())

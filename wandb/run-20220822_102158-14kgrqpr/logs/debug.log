@@ -1,0 +1,17 @@
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_setup.py:_flush():76] Configure stats pid to 7108
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_setup.py:_flush():76] Loading settings from C:\Users\wdrdg\.config\wandb\settings
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_setup.py:_flush():76] Loading settings from E:\Project\Generalized_MADDPG\wandb\settings
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_setup.py:_flush():76] Loading settings from environment variables: {'_require_service': 'True'}
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'maml_test.py', 'program': 'E:/Project/Generalized_MADDPG/maml_test.py'}
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_init.py:_log_setup():461] Logging user logs to E:\Project\Generalized_MADDPG\wandb\run-20220822_102158-14kgrqpr\logs\debug.log
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_init.py:_log_setup():462] Logging internal logs to E:\Project\Generalized_MADDPG\wandb\run-20220822_102158-14kgrqpr\logs\debug-internal.log
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_init.py:init():495] calling init triggers
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_init.py:init():499] wandb.init called with sweep_config: {}
+config: {}
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_init.py:init():548] starting backend
+2022-08-22 10:21:58,854 INFO    MainThread:7108 [wandb_init.py:init():552] setting up manager
+2022-08-22 10:21:58,859 INFO    MainThread:7108 [backend.py:_multiprocessing_setup():99] multiprocessing start_methods=spawn, using: spawn
+2022-08-22 10:21:58,862 INFO    MainThread:7108 [wandb_init.py:init():558] backend started and connected
+2022-08-22 10:21:58,864 INFO    MainThread:7108 [wandb_init.py:init():636] updated telemetry
+2022-08-22 10:21:58,889 INFO    MainThread:7108 [wandb_init.py:init():668] communicating run to backend with 30 second timeout
+2022-08-22 10:22:01,947 WARNING MsgRouterThr:7108 [router.py:message_loop():76] message_loop has been closed

@@ -1,0 +1,8 @@
+E:\Project\Generalized_MADDPG\multiagent\scenarios\__init__.py:1: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+Traceback (most recent call last):
+  File "E:/Project/Generalized_MADDPG/maml_test.py", line 22, in <module>
+    env, args = make_env(args)
+  File "E:\Project\Generalized_MADDPG\common\utils.py", line 43, in make_env
+    world = scenario.make_world()
+TypeError: make_world() missing 1 required positional argument: 'run_index'
