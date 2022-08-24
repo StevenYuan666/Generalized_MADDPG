@@ -125,7 +125,7 @@ if __name__ == '__main__':
         "episode_limit": 500,
         "load_rate": 1,
         "num_tasks": 4,
-        "num_hidden_layers": 3,
+        "num_hidden_layers": 5,
         "size_hidden_layers": 64,
         "DDPG": True,
         "PPO": False,
