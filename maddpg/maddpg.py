@@ -10,13 +10,15 @@ class MADDPG:
         self.agent_id = agent_id
         self.train_step = 0
         self.input_shape = input_shape
+        self.device = args.device
         # create the network
-        self.actor_network = Actor(args, agent_id)
-        self.critic_network = Critic(args)
+
+        self.actor_network = Actor(args, agent_id).to(self.device)
+        self.critic_network = Critic(args, self.input_shape).to(self.device)
 
         # build up the target network
-        self.actor_target_network = Actor(args, agent_id)
-        self.critic_target_network = Critic(args)
+        self.actor_target_network = Actor(args, agent_id).to(self.device)
+        self.critic_target_network = Critic(args, self.input_shape).to(self.device)
 
         # load the weights into the target networks
         self.actor_target_network.load_state_dict(self.actor_network.state_dict())
@@ -30,10 +32,10 @@ class MADDPG:
         self.q_loss = None
         self.a_loss = None
 
-        # create the dict for store the model
+        # create the dict for store the model_maml
         if not os.path.exists(self.args.save_dir):
             os.mkdir(self.args.save_dir)
-        # path to save the model
+        # path to save the model_maml
         self.model_path = self.args.save_dir + '/' + self.args.scenario_name
         if not os.path.exists(self.model_path):
             os.mkdir(self.model_path)
@@ -43,9 +45,9 @@ class MADDPG:
 
         # 加载模型
 
-        # path of meta model
+        # path of meta model_maml
         if self.args.load_meta == 1:
-            path = "E:/New_Generalized_MADDPG/Generalized_MADDPG/maml_rl/MAML_result/centralized_q_params.pth"
+            path = "E:\Project\Generalized_MADDPG\maml_rl\MAML_result\centralized_q_params.pth"
             self.critic_network.load_state_dict(torch.load(path))
             self.critic_target_network.load_state_dict(torch.load(path))
 
@@ -68,7 +70,7 @@ class MADDPG:
     # update the network
     def train(self, transitions, other_agents):
         for key in transitions.keys():
-            transitions[key] = torch.tensor(transitions[key], dtype=torch.float32)
+            transitions[key] = torch.tensor(transitions[key], dtype=torch.float32).to(self.device)
         r = transitions['r_%d' % self.agent_id]  # 训练时只需要自己的reward
         o, u, o_next = [], [], []  # 用来装每个agent经验中的各项
         for agent_id in range(self.args.n_agents):

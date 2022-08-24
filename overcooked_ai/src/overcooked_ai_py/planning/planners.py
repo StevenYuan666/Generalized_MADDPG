@@ -1093,7 +1093,7 @@ class MediumLevelActionManager(object):
     # Deprecated.
     # def get_successor_states_fixed_other(self, start_state, other_agent, other_agent_idx):
     #     """
-    #     Get the successor states of a given start state, assuming that the other agent is fixed and will act according to the passed in model
+    #     Get the successor states of a given start state, assuming that the other agent is fixed and will act according to the passed in model_maml
     #     """
     #     if self.mdp.is_terminal(start_state):
     #         return []

@@ -9,7 +9,7 @@ params:
   device: ${device}
   discrete_action_space: ${discrete_action_space}
   batch_size: 256
-  lr: 0.001
+  lr: 0.0001
   tau: 0.01
   gamma: 0.95
 

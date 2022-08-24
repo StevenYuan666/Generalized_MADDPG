@@ -4,20 +4,23 @@ from maddpg.actor_critic import Critic
 import numpy as np
 import common.utils as me
 import time
+from maml_rl.centralized_q import Centralized_q
 from task import Task
 
 
 class MetaLearner:
 
-    def __init__(self, args, sampler, gamma=0.95, outer_lr=1e-5, tau=1.0, device='cpu'):
+    def __init__(self, args, sampler, gamma=0.95, outer_lr=1e-5, tau=1.0, device='cuda'):
         self.task_sampler = sampler
         self.gamma = gamma
         self.outer_lr = outer_lr
         self.tau = tau
-        # self.to(device)
+        self.device = (device)
 
-        self.centralized_q = Critic(args=args)
-        self.target_centralized_q = Critic(args=args)
+
+        self.centralized_q = Centralized_q(args=args, task_sampler=self.task_sampler).to(self.device)
+        self.target_centralized_q = Centralized_q(args=args, task_sampler=self.task_sampler).to(self.device)
+
         self.centralized_q_optim = torch.optim.Adam(self.centralized_q.parameters(), lr=self.outer_lr)
         self.input_shape = self.centralized_q.input_shape
         # args.scenario_name = "simple_spread"
@@ -25,11 +28,12 @@ class MetaLearner:
         # 
         # self.args = args
         self.train_step = 0
-        self.total_training_step = 500
+        self.total_training_step = 2000
         self.update_times = 1000
         self.episode_limit = 100
         self.num_tasks = 3
         self.save_rate = 10
+        self.load_rate = 10
 
     def train(self):
         result = []
@@ -53,7 +57,8 @@ class MetaLearner:
                         #         (1 - self.args.tau) * target_param.data + self.args.tau * param.data)
                         if time_step == 0:
                             a.policy.critic_target_network.load_state_dict(self.centralized_q.state_dict())
-                        a.policy.critic_network.load_state_dict(self.centralized_q.state_dict())
+                        if time_step % self.load_rate == 0:
+                            a.policy.critic_network.load_state_dict(self.centralized_q.state_dict())
                     # inner training
                     task_q_loss = t.run(time_step=time_step, centralized_q=self.centralized_q)
                     if total_q_loss is None:
@@ -77,7 +82,7 @@ class MetaLearner:
 
             if i % self.save_rate == 0:
                 print("Saving training information and meta centralized q function parameters", end=" ")
-                np.save("./MAML_result/training_info.npy", np.array(result))
+                np.save("MAML_result/training_info.npy", np.array(result))
                 torch.save(self.centralized_q.state_dict(), './MAML_result/centralized_q_params.pth')
                 print("and successfully saved")
 

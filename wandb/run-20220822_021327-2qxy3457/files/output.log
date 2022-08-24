@@ -1,0 +1,20 @@
+E:\Project\Generalized_MADDPG\multiagent\scenarios\__init__.py:1: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+Traceback (most recent call last):
+  File "E:/Project/Generalized_MADDPG/maml_test.py", line 23, in <module>
+    runner = Runner(args, env)
+  File "E:\Project\Generalized_MADDPG\runner.py", line 17, in __init__
+    self.agents = self._init_agents()
+  File "E:\Project\Generalized_MADDPG\runner.py", line 26, in _init_agents
+    agent = Agent(i, self.args)
+  File "E:\Project\Generalized_MADDPG\agent.py", line 13, in __init__
+    self.policy = MADDPG(args, agent_id, input_shape)
+  File "E:\Project\Generalized_MADDPG\maddpg\maddpg.py", line 50, in __init__
+    self.critic_network.load_state_dict(torch.load(path))
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\torch\serialization.py", line 594, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\torch\serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\torch\serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'E:/New_Generalized_MADDPG/Generalized_MADDPG/maml_rl/MAML_result/centralized_q_params.pth'

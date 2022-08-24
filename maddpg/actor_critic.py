@@ -23,10 +23,11 @@ class Actor(nn.Module):
 
 
 class Critic(nn.Module):
-    def __init__(self, args, input_shape=72):
+    def __init__(self, args, input_shape=0):
         super(Critic, self).__init__()
         self.max_action = args.high_action if hasattr(args, "high_action") else 1
         self.input_shape = input_shape
+        self.device =args.device
         if self.input_shape == 0:
             self.input_shape = sum(args.obs_shape) + sum(args.action_shape)
         self.fc1 = nn.Linear(self.input_shape, 64)
@@ -43,7 +44,7 @@ class Critic(nn.Module):
         while True:
             if len(x[0])==self.input_shape:
                 break
-            x = torch.cat((x, torch.tensor([[0]]*256)), dim=1)
+            x = torch.cat((x, torch.tensor([[0]]*256).to(self.device)), dim=1)
 
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))

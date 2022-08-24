@@ -51,7 +51,7 @@ class MADDPG(object):
             agent.train()
         return np.array(actions)
 
-    def update(self, replay_buffer, logger, step):
+    def update(self, replay_buffer):
 
         sample = replay_buffer.sample(self.batch_size, nth=self.agent_index)
         obses, actions, rewards, next_obses, dones = sample
@@ -108,6 +108,7 @@ class MADDPG(object):
             agent.policy_optimizer.step()
 
         self.update_all_targets()
+        return obses, actions
 
     def update_all_targets(self):
         for agent in self.agents:

@@ -1,0 +1,6 @@
+E:\Project\Generalized_MADDPG\multiagent\scenarios\__init__.py:1: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+Traceback (most recent call last):
+  File "E:/Project/Generalized_MADDPG/maml_test.py", line 42, in <module>
+    action = agent.select_action(s[agent_id], runner.noise, runner.epsilon)
+NameError: name 's' is not defined

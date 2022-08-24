@@ -1,0 +1,3 @@
+E:\Project\Generalized_MADDPG\multiagent\scenarios\__init__.py:1: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+  import imp
+E:\Project\Generalized_MADDPG\maddpg\maddpg.py:72: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).

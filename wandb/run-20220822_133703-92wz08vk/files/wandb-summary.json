@@ -1,0 +1,1 @@
+{"train_rewards": -1705.4348853310223, "episode": 999, "_timestamp": 1661193063.9974256, "_runtime": 3240.6161715984344, "_step": 1097, "val_return": -504.12333375280934, "eval_episode": 99, "_wandb": {"runtime": 3243}}

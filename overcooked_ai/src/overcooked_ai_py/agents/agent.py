@@ -528,7 +528,7 @@ class SampleAgent(Agent):
 #
 # class EmbeddedPlanningAgent(Agent):
 #     """
-#     An agent that uses A* search to find an optimal action based on a model of the other agent,
+#     An agent that uses A* search to find an optimal action based on a model_maml of the other agent,
 #     `other_agent`. This class approximates the other agent as being deterministic even though it
 #     might be stochastic in order to perform the search.
 #     """

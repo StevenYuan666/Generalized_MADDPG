@@ -19,7 +19,7 @@ class TaskSampler:
         for s in self.scenarios_names:
             args = copy.copy(self.args)
             args.scenario_name = s
-            tasks.append(Task(scenario_name=s, num_agents=self.num_agents, batch_size=self.batch_size, args=args))
+            tasks.append(Task(scenario_name=s, num_agents=self.num_agents, input_shape=input_shape, batch_size=self.batch_size, args=args))
         # for _ in range(num_tasks):
         #     scenario = random.choice(self.scenarios_names)
         #     args = copy.copy(self.args)

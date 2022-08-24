@@ -1,0 +1,166 @@
+2022-08-22 02:11:37,383 INFO    StreamThr :3140 [internal.py:wandb_internal():93] W&B internal server running at pid: 3140, started at: 2022-08-22 02:11:37.382797
+2022-08-22 02:11:37,384 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: status
+2022-08-22 02:11:37,386 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: status
+2022-08-22 02:11:37,387 DEBUG   SenderThread:3140 [sender.py:send():302] send: header
+2022-08-22 02:11:37,387 INFO    WriterThread:3140 [datastore.py:open_for_write():75] open: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\run-2gdd1mtw.wandb
+2022-08-22 02:11:37,411 DEBUG   SenderThread:3140 [sender.py:send():302] send: run
+2022-08-22 02:11:37,969 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: check_version
+2022-08-22 02:11:37,972 INFO    SenderThread:3140 [dir_watcher.py:__init__():216] watching files in: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files
+2022-08-22 02:11:37,972 INFO    SenderThread:3140 [sender.py:_start_run_threads():916] run started: 2gdd1mtw with start time 1661148697.382797
+2022-08-22 02:11:37,972 DEBUG   SenderThread:3140 [sender.py:send():302] send: summary
+2022-08-22 02:11:37,972 INFO    SenderThread:3140 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-08-22 02:11:37,973 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: check_version
+2022-08-22 02:11:38,123 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: run_start
+2022-08-22 02:11:38,135 DEBUG   HandlerThread:3140 [meta.py:__init__():35] meta init
+2022-08-22 02:11:38,135 DEBUG   HandlerThread:3140 [meta.py:__init__():50] meta init done
+2022-08-22 02:11:38,135 DEBUG   HandlerThread:3140 [meta.py:probe():216] probe
+2022-08-22 02:11:38,153 DEBUG   HandlerThread:3140 [meta.py:_setup_git():206] setup git
+2022-08-22 02:11:38,204 DEBUG   HandlerThread:3140 [meta.py:_setup_git():213] setup git done
+2022-08-22 02:11:38,204 DEBUG   HandlerThread:3140 [meta.py:_save_pip():54] save pip
+2022-08-22 02:11:38,204 DEBUG   HandlerThread:3140 [meta.py:_save_pip():68] save pip done
+2022-08-22 02:11:38,204 DEBUG   HandlerThread:3140 [meta.py:_save_conda():75] save conda
+2022-08-22 02:11:38,206 ERROR   HandlerThread:3140 [meta.py:_save_conda():84] Error saving conda packages
+Traceback (most recent call last):
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\site-packages\wandb\sdk\internal\meta.py", line 81, in _save_conda
+    ["conda", "env", "export"], stdout=f, stderr=subprocess.DEVNULL
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\subprocess.py", line 267, in call
+    with Popen(*popenargs, **kwargs) as p:
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\subprocess.py", line 709, in __init__
+    restore_signals, start_new_session)
+  File "C:\Users\wdrdg\anaconda3\envs\Generalized_MADDPG\lib\subprocess.py", line 997, in _execute_child
+    startupinfo)
+FileNotFoundError: [WinError 2] 系统找不到指定的文件。
+2022-08-22 02:11:38,207 DEBUG   HandlerThread:3140 [meta.py:_save_conda():85] save conda done
+2022-08-22 02:11:38,207 DEBUG   HandlerThread:3140 [meta.py:probe():254] probe done
+2022-08-22 02:11:38,272 DEBUG   SenderThread:3140 [sender.py:send():302] send: files
+2022-08-22 02:11:38,272 INFO    SenderThread:3140 [sender.py:_save_file():1156] saving file wandb-metadata.json with policy now
+2022-08-22 02:11:38,272 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-22 02:11:38,273 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: stop_status
+2022-08-22 02:11:38,275 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:38,400 DEBUG   SenderThread:3140 [sender.py:send():302] send: telemetry
+2022-08-22 02:11:38,402 DEBUG   SenderThread:3140 [sender.py:send():302] send: exit
+2022-08-22 02:11:38,402 INFO    SenderThread:3140 [sender.py:send_exit():438] handling exit code: 1
+2022-08-22 02:11:38,403 INFO    SenderThread:3140 [sender.py:send_exit():440] handling runtime: 0
+2022-08-22 02:11:38,403 INFO    SenderThread:3140 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-08-22 02:11:38,403 INFO    SenderThread:3140 [sender.py:send_exit():446] send defer
+2022-08-22 02:11:38,403 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:38,404 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:38,404 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 0
+2022-08-22 02:11:38,404 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:38,404 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 0
+2022-08-22 02:11:38,404 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 1
+2022-08-22 02:11:38,404 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:38,404 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 1
+2022-08-22 02:11:38,509 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:38,510 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 1
+2022-08-22 02:11:38,510 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 2
+2022-08-22 02:11:38,510 DEBUG   SenderThread:3140 [sender.py:send():302] send: stats
+2022-08-22 02:11:38,510 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:38,510 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 2
+2022-08-22 02:11:38,510 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:38,510 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 2
+2022-08-22 02:11:38,510 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 3
+2022-08-22 02:11:38,510 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:38,510 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 3
+2022-08-22 02:11:38,510 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:38,510 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 3
+2022-08-22 02:11:38,510 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 4
+2022-08-22 02:11:38,510 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:38,511 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 4
+2022-08-22 02:11:38,511 DEBUG   SenderThread:3140 [sender.py:send():302] send: summary
+2022-08-22 02:11:38,511 INFO    SenderThread:3140 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-08-22 02:11:38,511 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:38,511 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 4
+2022-08-22 02:11:38,511 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 5
+2022-08-22 02:11:38,511 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:38,511 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 5
+2022-08-22 02:11:38,511 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:38,512 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 5
+2022-08-22 02:11:38,514 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:38,663 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 6
+2022-08-22 02:11:38,664 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:38,664 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:38,664 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 6
+2022-08-22 02:11:38,664 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:38,664 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 6
+2022-08-22 02:11:38,769 INFO    Thread-22 :3140 [upload_job.py:push():138] Uploaded file C:\Users\wdrdg\AppData\Local\Temp\tmptx6h4t6gwandb\5iexkmbr-wandb-metadata.json
+2022-08-22 02:11:38,769 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:38,976 INFO    Thread-16 :3140 [dir_watcher.py:_on_file_modified():292] file/dir modified: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\config.yaml
+2022-08-22 02:11:38,976 INFO    Thread-16 :3140 [dir_watcher.py:_on_file_created():275] file/dir created: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\wandb-summary.json
+2022-08-22 02:11:38,977 INFO    Thread-16 :3140 [dir_watcher.py:_on_file_created():275] file/dir created: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\output.log
+2022-08-22 02:11:38,977 INFO    Thread-16 :3140 [dir_watcher.py:_on_file_created():275] file/dir created: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\conda-environment.yaml
+2022-08-22 02:11:38,977 INFO    Thread-16 :3140 [dir_watcher.py:_on_file_created():275] file/dir created: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\requirements.txt
+2022-08-22 02:11:38,977 INFO    Thread-16 :3140 [dir_watcher.py:_on_file_created():275] file/dir created: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\wandb-metadata.json
+2022-08-22 02:11:40,420 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 7
+2022-08-22 02:11:40,421 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:40,422 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:40,422 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 7
+2022-08-22 02:11:40,422 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:40,422 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 7
+2022-08-22 02:11:40,422 INFO    SenderThread:3140 [dir_watcher.py:finish():362] shutting down directory watcher
+2022-08-22 02:11:40,528 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:40,991 INFO    SenderThread:3140 [dir_watcher.py:_on_file_modified():292] file/dir modified: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\output.log
+2022-08-22 02:11:40,992 INFO    SenderThread:3140 [dir_watcher.py:finish():392] scan: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files
+2022-08-22 02:11:40,992 INFO    SenderThread:3140 [dir_watcher.py:finish():406] scan save: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\conda-environment.yaml conda-environment.yaml
+2022-08-22 02:11:40,993 INFO    SenderThread:3140 [dir_watcher.py:finish():406] scan save: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\config.yaml config.yaml
+2022-08-22 02:11:40,993 INFO    SenderThread:3140 [dir_watcher.py:finish():406] scan save: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\output.log output.log
+2022-08-22 02:11:40,994 INFO    SenderThread:3140 [dir_watcher.py:finish():406] scan save: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\requirements.txt requirements.txt
+2022-08-22 02:11:41,001 INFO    SenderThread:3140 [dir_watcher.py:finish():406] scan save: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\wandb-metadata.json wandb-metadata.json
+2022-08-22 02:11:41,001 INFO    SenderThread:3140 [dir_watcher.py:finish():406] scan save: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\wandb-summary.json wandb-summary.json
+2022-08-22 02:11:41,004 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 8
+2022-08-22 02:11:41,005 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,008 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:41,009 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 8
+2022-08-22 02:11:41,009 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:41,009 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 8
+2022-08-22 02:11:41,010 INFO    SenderThread:3140 [file_pusher.py:finish():171] shutting down file pusher
+2022-08-22 02:11:41,117 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:41,117 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,229 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:41,230 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,340 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:41,340 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,451 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:41,452 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,467 INFO    Thread-25 :3140 [upload_job.py:push():138] Uploaded file E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\requirements.txt
+2022-08-22 02:11:41,506 INFO    Thread-26 :3140 [upload_job.py:push():138] Uploaded file E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\wandb-summary.json
+2022-08-22 02:11:41,512 INFO    Thread-23 :3140 [upload_job.py:push():138] Uploaded file E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\config.yaml
+2022-08-22 02:11:41,563 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:41,564 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,567 INFO    Thread-24 :3140 [upload_job.py:push():138] Uploaded file E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\files\output.log
+2022-08-22 02:11:41,674 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:41,675 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,770 INFO    Thread-15 :3140 [sender.py:transition_state():459] send defer: 9
+2022-08-22 02:11:41,771 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:41,771 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 9
+2022-08-22 02:11:41,771 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:41,771 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 9
+2022-08-22 02:11:41,786 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:41,845 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 10
+2022-08-22 02:11:41,846 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,847 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:41,847 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 10
+2022-08-22 02:11:41,847 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:41,848 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 10
+2022-08-22 02:11:41,848 INFO    SenderThread:3140 [sender.py:transition_state():459] send defer: 11
+2022-08-22 02:11:41,849 DEBUG   SenderThread:3140 [sender.py:send():302] send: final
+2022-08-22 02:11:41,849 DEBUG   SenderThread:3140 [sender.py:send():302] send: footer
+2022-08-22 02:11:41,849 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: defer
+2022-08-22 02:11:41,849 INFO    HandlerThread:3140 [handler.py:handle_request_defer():164] handle defer: 11
+2022-08-22 02:11:41,849 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: defer
+2022-08-22 02:11:41,849 INFO    SenderThread:3140 [sender.py:send_request_defer():455] handle sender defer: 11
+2022-08-22 02:11:41,962 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: poll_exit
+2022-08-22 02:11:41,962 DEBUG   SenderThread:3140 [sender.py:send_request():316] send_request: poll_exit
+2022-08-22 02:11:41,962 INFO    SenderThread:3140 [file_pusher.py:join():176] waiting for file pusher
+2022-08-22 02:11:42,312 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: sampled_history
+2022-08-22 02:11:42,313 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: get_summary
+2022-08-22 02:11:42,313 INFO    MainThread:3140 [wandb_run.py:_footer_history_summary_info():3305] rendering history
+2022-08-22 02:11:42,313 INFO    MainThread:3140 [wandb_run.py:_footer_history_summary_info():3337] rendering summary
+2022-08-22 02:11:42,314 INFO    MainThread:3140 [wandb_run.py:_footer_sync_info():3261] logging synced files
+2022-08-22 02:11:42,314 DEBUG   HandlerThread:3140 [handler.py:handle_request():141] handle_request: shutdown
+2022-08-22 02:11:42,314 INFO    HandlerThread:3140 [handler.py:finish():810] shutting down handler
+2022-08-22 02:11:42,855 INFO    WriterThread:3140 [datastore.py:close():279] close: E:\Project\Generalized_MADDPG\wandb\run-20220822_021137-2gdd1mtw\run-2gdd1mtw.wandb
+2022-08-22 02:11:43,205 INFO    SenderThread:3140 [sender.py:finish():1312] shutting down sender
+2022-08-22 02:11:43,205 INFO    SenderThread:3140 [file_pusher.py:finish():171] shutting down file pusher
+2022-08-22 02:11:43,205 INFO    SenderThread:3140 [file_pusher.py:join():176] waiting for file pusher
+2022-08-22 02:11:43,317 INFO    MainThread:3140 [internal.py:handle_exit():80] Internal process exited
