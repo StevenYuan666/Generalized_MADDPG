@@ -1,0 +1,24 @@
+{
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.6.5",
+    "heartbeatAt": "2022-08-24T05:02:33.699868",
+    "startedAt": "2022-08-24T05:02:32.119759",
+    "docker": null,
+    "gpu": "NVIDIA GeForce RTX 3070",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "E:/Project/Generalized_MADDPG/maml_test.py",
+    "codePath": "maml_test.py",
+    "git": {
+        "remote": "https://github.com/StevenYuan666/Generalized_MADDPG.git",
+        "commit": "fd23375bfd8c13ce6fbd8c9579e9904146893f9e"
+    },
+    "email": "songrui_qd@outlook.com",
+    "root": "E:/Project/Generalized_MADDPG",
+    "host": "DESKTOP-1F0N6NR",
+    "username": "wdrdg",
+    "executable": "C:\\Users\\wdrdg\\anaconda3\\envs\\Generalized_MADDPG\\python.exe"
+}

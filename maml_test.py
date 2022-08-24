@@ -1,3 +1,4 @@
+from tqdm import tqdm
 from runner import Runner
 from common.arguments import get_args
 from common.utils import make_env
@@ -11,13 +12,15 @@ if __name__ == '__main__':
     # get the params
     seed = [0, 100, 200, 300, 400]
     for load_unload in range(0,2):
+        print(" The load status: "+ str(load_unload))
         for run in range(0,5):
             # initial setting
+            print(" The run: " + str(run))
             random.seed(seed[run])
             np.random.seed(seed[run])
             torch.manual_seed(seed[run])
             wandb.init(project="Generalized_MADDPG", entity="aims-hign",
-                       group="if_load_meta:"+str(load_unload), job_type="seed"+str(seed[run])) #id=wandb.util.generate_id(), resume="allow"
+                       group="evaluate_rate=10_if_load_meta:"+str(load_unload), job_type="seed"+str(seed[run])) #id=wandb.util.generate_id(), resume="allow"
             CHECKPOINT_PATH = './checkpoint_load_'+str(load_unload)+'seed'+str(seed[run])+'.tar'
             # args setting
             args = get_args()
@@ -33,7 +36,7 @@ if __name__ == '__main__':
             returns = []
             episode = 0
             eval_episode = 0
-            for time_step in range(args.time_steps):
+            for time_step in tqdm(range(args.time_steps)):
                 u = []
                 actions = []
                 with torch.no_grad():

@@ -11,10 +11,10 @@ def get_args():
     # Environment
     parser.add_argument("--scenario-name", type=str, default="simple_test", help="name of the scenario script")
     parser.add_argument("--max-episode-len", type=int, default=100, help="maximum episode length")
-    parser.add_argument("--time-steps", type=int, default=100000, help="number of time steps")
+    parser.add_argument("--time-steps", type=int, default=40000, help="number of time steps")
     # 一个地图最多env.n个agents，用户可以定义min(env.n,num-adversaries)个敌人，剩下的是好的agent
     parser.add_argument("--num-adversaries", type=int, default=0, help="number of adversaries")
-    parser.add_argument("--device", type=str, default='cuda', help="device")
+    parser.add_argument("--device", type=str, default='cpu', help="device")
 
     # Core training parameters
     parser.add_argument("--lr_actor", type=float, default=1e-4, help="learning rate of actor")
@@ -34,7 +34,7 @@ def get_args():
     parser.add_argument("--evaluate_episodes", type=int, default=10, help="number of episodes for evaluating")
     parser.add_argument("--evaluate_episode-len", type=int, default=100, help="length of episodes for evaluating")
     parser.add_argument("--evaluate", type=bool, default=False, help="whether to evaluate the model_maml")
-    parser.add_argument("--evaluate_rate", type=int, default=1000, help="how often to evaluate model_maml")
+    parser.add_argument("--evaluate_rate", type=int, default=100, help="how often to evaluate model_maml")
 
     # test
     parser.add_argument("--run-index", type=int, default=0, help="the times of test")
