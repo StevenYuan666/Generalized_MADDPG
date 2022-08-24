@@ -12,6 +12,7 @@ class MADDPG:
         self.input_shape = input_shape
         self.device = args.device
         # create the network
+
         self.actor_network = Actor(args, agent_id).to(self.device)
         self.critic_network = Critic(args, self.input_shape).to(self.device)
 

@@ -17,8 +17,10 @@ class MetaLearner:
         self.tau = tau
         self.device = (device)
 
+
         self.centralized_q = Centralized_q(args=args, task_sampler=self.task_sampler).to(self.device)
         self.target_centralized_q = Centralized_q(args=args, task_sampler=self.task_sampler).to(self.device)
+
         self.centralized_q_optim = torch.optim.Adam(self.centralized_q.parameters(), lr=self.outer_lr)
         self.input_shape = self.centralized_q.input_shape
         # args.scenario_name = "simple_spread"
@@ -40,7 +42,7 @@ class MetaLearner:
         c=0
         for i in range(self.total_training_step):
             print("Meta Training " + str(i + 1) + " sampling " + str(self.num_tasks) + " tasks")
-            tasks = self.task_sampler.sample(num_tasks=self.num_tasks, input_shape=self.input_shape)
+            tasks = self.task_sampler.sample(num_tasks=self.num_tasks)
             for time_step in range(self.update_times):
                 c+=1
                 total_q_loss = None
@@ -58,7 +60,7 @@ class MetaLearner:
                         if time_step % self.load_rate == 0:
                             a.policy.critic_network.load_state_dict(self.centralized_q.state_dict())
                     # inner training
-                    inner_returns, task_q_loss = t.run(outer_time=i, time_step=time_step, centralized_q=self.centralized_q, inner_returns=inner_returns)
+                    task_q_loss = t.run(time_step=time_step, centralized_q=self.centralized_q)
                     if total_q_loss is None:
                         total_q_loss = task_q_loss
                     else:

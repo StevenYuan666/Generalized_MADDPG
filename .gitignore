@@ -765,3 +765,7 @@ model/simple_spread/agent_0/101_critic_params.pkl
 model/simple_spread/agent_0/101_actor_params.pkl
 model/simple_spread/agent_0/100_critic_params.pkl
 model/simple_spread/agent_0/100_actor_params.pkl
+*.pyc
+*.pyc
+*.pyc
+maddpg/__pycache__/maddpg.cpython-38.pyc

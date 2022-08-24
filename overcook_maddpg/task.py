@@ -1,6 +1,8 @@
+
 import copy
 import time
 import cv2
+
 
 from recoder import VideoRecorder
 from logger import Logger
@@ -13,6 +15,7 @@ from overcooked_ai.src.overcooked_ai_py.env import OverCookedEnv
 from model.utils.model import *
 
 from utils.agent import find_index
+
 import hydra
 from omegaconf import DictConfig
 import os
@@ -22,6 +25,7 @@ import numpy as np
 class Task(object):
     def __init__(self, cfg):
         self.work_dir = os.getcwd()
+
         print(f'Workspace: {self.work_dir}')
 
         self.cfg = cfg
@@ -31,12 +35,18 @@ class Task(object):
         #                      log_frequency=cfg.log_frequency,
         #                      agent=cfg.agent.name)
 
+
         set_seed_everywhere(cfg.seed)
         self.device = torch.device(cfg.device)
         self.discrete_action = cfg.discrete_action_space
         self.save_replay_buffer = cfg.save_replay_buffer
+
         self.mse_loss = torch.nn.MSELoss()
         # self.env = NormalizedEnv(make_env(cfg.env, discrete_action=self.discrete_action))
+
+        # self.env = NormalizedEnv(make_env(cfg.env, discrete_action=self.discrete_action))
+        # print(self.cfg.env)
+
         self.env = OverCookedEnv(scenario=self.cfg.env, episode_length=self.cfg.episode_length)
 
         self.env_agent_types = get_agent_types(self.env)
@@ -62,9 +72,12 @@ class Task(object):
         cfg.agent.params.agent_index = self.agent_indexes
         cfg.agent.params.critic.input_dim = cfg.agent.params.obs_dim + cfg.agent.params.action_dim
 
+
         self.agent = hydra.utils.instantiate(self.cfg.agent)
 
         self.common_reward = self.cfg.common_reward
+
+
         obs_shape = [len(self.env_agent_types), cfg.agent.params.obs_dim]
         action_shape = [len(self.env_agent_types), cfg.agent.params.action_dim if not self.discrete_action else 1]
         reward_shape = [len(self.env_agent_types), 1]
@@ -77,11 +90,13 @@ class Task(object):
                                           device=self.device)
 
         self.video_recorder = VideoRecorder(self.work_dir if cfg.save_video else None)
+
         self.step = 0
         self.eval_episode = 0
         self.episode_reward = 0
         self.episode_step = 0
         self.done = False
+
 
     def evaluate(self):
         average_episode_reward = 0
@@ -91,12 +106,14 @@ class Task(object):
             obs = self.env.reset()
             # episode_step = 0
 
+
             done = False
             episode_reward = 0
             while not done:
                 action = self.agent.act(obs, sample=False)
                 obs, rewards, done, info = self.env.step(action)
                 rewards = np.array(info['shaped_r_by_agent']).reshape(-1, 1)
+
                 # self.video_recorder.record(self.env)
                 episode_reward += sum(rewards)[0]
                 # episode_step += 1
@@ -123,6 +140,7 @@ class Task(object):
             self.agent.scale_noise(self.ou_final_scale + (self.ou_init_scale - self.ou_final_scale) * self.ou_percentage)
             self.agent.reset_noise()
             self.eval_episode += 1
+
 
         if time_step < self.cfg.num_seed_steps:
             action = np.array([self.env.action_space.sample() for _ in self.env_agent_types])
@@ -151,16 +169,19 @@ class Task(object):
                 target_q = 0.99 * a.critic(critic_in) + 0.01 *a.target_critic(critic_in)
                 q_value = centralized_q(critic_in)
                 q_loss = self.mse_loss(q_value, target_q)
+
                 if task_q_loss is None:
                     task_q_loss = q_loss
                 else:
                     task_q_loss = task_q_loss.add(q_loss)
 
         rewards = np.array(info['shaped_r_by_agent']).reshape(-1, 1)
+
         if (time_step + 1) % self.cfg.eval_frequency == 0:
             done = True
 
         self.episode_reward += sum(rewards)[0]
+
 
         if self.discrete_action: action = action.reshape(-1, 1)
 
@@ -171,7 +192,6 @@ class Task(object):
         self.obs = next_obs
 
         return task_q_loss
-
 
 @hydra.main(config_path='config', config_name='train')
 def main(cfg: DictConfig) -> None:
