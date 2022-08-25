@@ -30,6 +30,9 @@ AGENT_TRAIN_FORMAT = {
     'maddpg': [
         ('batch_reward', 'BR', 'float'),
     ],
+    'mappo': [
+        ('batch_reward', 'BR', 'float'),
+    ],
     'rem_maddpg': [
         ('batch_reward', 'BR', 'float'),
     ],

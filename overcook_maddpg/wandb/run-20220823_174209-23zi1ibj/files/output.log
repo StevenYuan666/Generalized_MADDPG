@@ -1,0 +1,48 @@
+/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'train': Defaults list is missing `_self_`. See https://hydra.cc/docs/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+Meta Training 1 sampling 4 tasks
+/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/model/maddpg.py:70: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:201.)
+  target_actions = torch.Tensor([onehot_from_logits(policy(next_obs)).detach().cpu().numpy() for policy, next_obs in
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 1
+	Training_Avg_Rewards:  [14.333333333333334, 10.0, 8.777777777777779, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 2 sampling 4 tasks
+/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py:64: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  np.save("/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/result/training_info.npy", np.array(result))
+Traceback (most recent call last):
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py", line 135, in <module>
+    main()
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/main.py", line 48, in decorated_main
+    _run_hydra(
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/utils.py", line 377, in _run_hydra
+    run_and_report(
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/utils.py", line 211, in run_and_report
+    return func()
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/utils.py", line 378, in <lambda>
+    lambda: hydra.run(
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/hydra.py", line 98, in run
+    ret = run_job(
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/core/utils.py", line 160, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py", line 115, in main
+    leaner.train()
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py", line 42, in train
+    task_q_loss = t.run(centralized_q=self.centralized_q)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/task.py", line 146, in run
+    returned_critic_in = self.agent.update(self.replay_buffer, self.logger, self.step)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/model/maddpg.py", line 70, in update
+    target_actions = torch.Tensor([onehot_from_logits(policy(next_obs)).detach().cpu().numpy() for policy, next_obs in
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/model/maddpg.py", line 70, in <listcomp>
+    target_actions = torch.Tensor([onehot_from_logits(policy(next_obs)).detach().cpu().numpy() for policy, next_obs in
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/model/network.py", line 56, in forward
+    h2 = self.activation(self.fc2(h1))
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/torch/nn/modules/linear.py", line 103, in forward
+    return F.linear(input, self.weight, self.bias)
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/torch/nn/functional.py", line 1848, in linear
+    return torch._C._nn.linear(input, weight, bias)

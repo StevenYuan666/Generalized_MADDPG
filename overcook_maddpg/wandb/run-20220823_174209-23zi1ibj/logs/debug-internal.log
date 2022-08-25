@@ -1,0 +1,183 @@
+2022-08-23 17:42:09,653 INFO    StreamThr :49934 [internal.py:wandb_internal():90] W&B internal server running at pid: 49934, started at: 2022-08-23 17:42:09.651118
+2022-08-23 17:42:09,657 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: status
+2022-08-23 17:42:09,664 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: status
+2022-08-23 17:42:09,667 DEBUG   SenderThread:49934 [sender.py:send():302] send: header
+2022-08-23 17:42:09,667 INFO    WriterThread:49934 [datastore.py:open_for_write():75] open: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/run-23zi1ibj.wandb
+2022-08-23 17:42:09,668 DEBUG   SenderThread:49934 [sender.py:send():302] send: run
+2022-08-23 17:42:10,080 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: check_version
+2022-08-23 17:42:10,088 INFO    SenderThread:49934 [dir_watcher.py:__init__():216] watching files in: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files
+2022-08-23 17:42:10,088 INFO    SenderThread:49934 [sender.py:_start_run_threads():913] run started: 23zi1ibj with start time 1661301729.629082
+2022-08-23 17:42:10,088 DEBUG   SenderThread:49934 [sender.py:send():302] send: summary
+2022-08-23 17:42:10,089 INFO    SenderThread:49934 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-08-23 17:42:10,089 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: check_version
+2022-08-23 17:42:10,274 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: run_start
+2022-08-23 17:42:10,281 DEBUG   HandlerThread:49934 [meta.py:__init__():35] meta init
+2022-08-23 17:42:10,281 DEBUG   HandlerThread:49934 [meta.py:__init__():50] meta init done
+2022-08-23 17:42:10,282 DEBUG   HandlerThread:49934 [meta.py:probe():216] probe
+2022-08-23 17:42:10,283 DEBUG   HandlerThread:49934 [meta.py:_setup_git():206] setup git
+2022-08-23 17:42:10,315 DEBUG   HandlerThread:49934 [meta.py:_setup_git():213] setup git done
+2022-08-23 17:42:10,315 DEBUG   HandlerThread:49934 [meta.py:_save_pip():54] save pip
+2022-08-23 17:42:10,317 DEBUG   HandlerThread:49934 [meta.py:_save_pip():68] save pip done
+2022-08-23 17:42:10,317 DEBUG   HandlerThread:49934 [meta.py:_save_conda():75] save conda
+2022-08-23 17:42:11,094 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/conda-environment.yaml
+2022-08-23 17:42:11,095 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/requirements.txt
+2022-08-23 17:42:11,095 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/wandb-summary.json
+2022-08-23 17:42:17,979 DEBUG   HandlerThread:49934 [meta.py:_save_conda():85] save conda done
+2022-08-23 17:42:17,979 DEBUG   HandlerThread:49934 [meta.py:probe():254] probe done
+2022-08-23 17:42:18,114 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/conda-environment.yaml
+2022-08-23 17:42:18,120 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/wandb-metadata.json
+2022-08-23 17:42:18,479 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:42:18,481 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:42:18,670 DEBUG   SenderThread:49934 [sender.py:send():302] send: telemetry
+2022-08-23 17:42:18,671 DEBUG   SenderThread:49934 [sender.py:send():302] send: files
+2022-08-23 17:42:18,671 INFO    SenderThread:49934 [sender.py:_save_file():1156] saving file wandb-metadata.json with policy now
+2022-08-23 17:42:19,118 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_created():275] file/dir created: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/output.log
+2022-08-23 17:42:19,190 INFO    Thread-16 :49934 [upload_job.py:push():138] Uploaded file /var/folders/fb/vn1xn2010cg1rldvm2bm2d240000gn/T/tmp_mzjkkqrwandb/1o3o8mgo-wandb-metadata.json
+2022-08-23 17:42:21,121 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/output.log
+2022-08-23 17:42:23,376 DEBUG   SenderThread:49934 [sender.py:send():302] send: telemetry
+2022-08-23 17:42:23,485 DEBUG   SenderThread:49934 [sender.py:send():302] send: telemetry
+2022-08-23 17:42:27,132 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/output.log
+2022-08-23 17:42:35,436 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:42:35,436 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:42:38,898 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:42:41,166 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/config.yaml
+2022-08-23 17:42:50,669 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:42:50,672 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:43:05,983 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:43:05,985 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:43:09,516 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:43:21,219 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:43:21,221 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:43:36,444 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:43:36,450 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:43:40,245 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:43:51,671 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:43:51,672 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:44:06,861 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:44:06,862 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:44:10,997 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:44:22,094 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:44:22,094 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:44:37,298 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:44:37,299 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:44:41,850 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:44:52,477 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:44:52,477 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:45:07,699 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:45:07,699 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:45:12,567 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:45:23,208 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:45:23,208 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:45:38,429 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:45:38,429 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:45:43,304 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:45:53,665 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:45:53,665 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:46:08,906 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:46:08,906 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:46:13,897 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:46:24,121 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:46:24,121 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:46:39,303 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:46:39,303 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:46:44,506 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:46:54,505 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:46:54,514 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:47:09,748 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:47:09,749 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:47:15,214 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:47:24,941 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:47:24,942 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:47:40,160 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:47:40,161 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:47:45,961 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:47:55,349 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:47:55,349 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:48:10,712 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:48:10,712 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:48:16,783 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:48:25,924 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:48:25,924 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:48:41,111 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:48:41,111 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:48:47,483 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:48:56,285 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:48:56,287 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:49:11,574 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:49:11,575 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:49:18,161 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:49:26,765 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:49:26,769 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:49:41,961 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:49:41,967 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:49:48,872 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:49:57,571 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:49:57,573 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:50:12,806 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:50:12,806 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:50:19,546 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:50:20,929 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:50:20,939 DEBUG   SenderThread:49934 [sender.py:send():302] send: history
+2022-08-23 17:50:20,947 DEBUG   SenderThread:49934 [sender.py:send():302] send: summary
+2022-08-23 17:50:20,949 INFO    SenderThread:49934 [sender.py:_save_file():1156] saving file wandb-summary.json with policy end
+2022-08-23 17:50:20,955 DEBUG   SenderThread:49934 [sender.py:send():302] send: telemetry
+2022-08-23 17:50:21,753 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/wandb-summary.json
+2022-08-23 17:50:21,753 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/output.log
+2022-08-23 17:50:28,109 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:50:28,113 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:50:43,321 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:50:43,323 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:50:48,816 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/config.yaml
+2022-08-23 17:50:50,249 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:50:58,555 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:50:58,556 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:51:13,727 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:51:13,727 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:51:20,940 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:51:28,927 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:51:28,928 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:51:44,100 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:51:44,103 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:51:51,630 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:51:57,014 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:51:57,015 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:51:57,016 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:51:57,017 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:51:57,017 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:51:57,018 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:51:57,018 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:51:57,019 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:51:59,313 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:51:59,314 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:52:14,498 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:52:14,502 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:52:22,448 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:52:29,769 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:52:29,771 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:52:44,996 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:52:44,998 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:52:53,159 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:53:00,199 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:53:00,200 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:53:15,373 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:53:15,375 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:53:23,821 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:53:30,604 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:53:30,604 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:53:37,659 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:53:37,660 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:53:37,661 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:53:37,662 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:53:37,662 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:53:37,663 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:53:37,663 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:53:37,664 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: partial_history
+2022-08-23 17:53:45,826 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:53:45,827 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:53:54,518 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:54:01,034 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:54:01,036 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:54:16,242 DEBUG   HandlerThread:49934 [handler.py:handle_request():141] handle_request: stop_status
+2022-08-23 17:54:16,244 DEBUG   SenderThread:49934 [sender.py:send_request():316] send_request: stop_status
+2022-08-23 17:54:25,258 DEBUG   SenderThread:49934 [sender.py:send():302] send: stats
+2022-08-23 17:54:26,488 INFO    Thread-12 :49934 [dir_watcher.py:_on_file_modified():292] file/dir modified: /Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/wandb/run-20220823_174209-23zi1ibj/files/output.log

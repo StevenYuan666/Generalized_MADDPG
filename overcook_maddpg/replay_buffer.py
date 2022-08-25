@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 class ReplayBuffer(object):
 
-    def __init__(self, obs_shape, action_shape, reward_shape, dones_shape, capacity, device):
+    def __init__(self, obs_shape, action_shape, reward_shape, dones_shape, log_prob_shape, capacity, device):
         self.capacity = capacity
         self.device = device
 
@@ -18,6 +18,7 @@ class ReplayBuffer(object):
         self.actions = np.empty((capacity, *action_shape), dtype=np.float32)
         self.rewards = np.empty((capacity, *reward_shape), dtype=np.float32)
         self.dones = np.empty((capacity, *dones_shape), dtype=np.float32)
+        self.log_prob = np.empty((capacity, *log_prob_shape), dtype=np.float32)
 
         self.idx = 0
         self.full = False
@@ -25,12 +26,13 @@ class ReplayBuffer(object):
     def __len__(self):
         return self.capacity if self.full else self.idx
 
-    def add(self, obs, action, reward, next_obs, dones):
+    def add(self, obs, action, reward, next_obs, dones, log_prob):
         np.copyto(self.obses[self.idx], obs)
         np.copyto(self.actions[self.idx], action)
         np.copyto(self.rewards[self.idx], reward)
         np.copyto(self.next_obses[self.idx], next_obs)
         np.copyto(self.dones[self.idx], dones)
+        np.copyto(self.log_prob[self.idx], log_prob)
 
         self.idx = (self.idx + 1) % self.capacity
         self.full = self.full or self.idx == 0
@@ -44,14 +46,16 @@ class ReplayBuffer(object):
             rewards = torch.FloatTensor(self.rewards[idxs][:, nth]).to(self.device)
             next_obses = torch.FloatTensor(self.next_obses[idxs][:, nth]).to(self.device)
             dones = torch.FloatTensor(self.dones[idxs][:, nth]).to(self.device)
+            log_prob = torch.FloatTensor(self.log_prob[idxs][:, nth]).to(self.device)
         else:
             obses = torch.FloatTensor(self.obses[idxs]).to(self.device)
             actions = torch.FloatTensor(self.actions[idxs]).to(self.device)
             rewards = torch.FloatTensor(self.rewards[idxs]).to(self.device)
             next_obses = torch.FloatTensor(self.next_obses[idxs]).to(self.device)
             dones = torch.FloatTensor(self.dones[idxs]).to(self.device)
+            log_prob = torch.FloatTensor(self.log_prob[idxs]).to(self.device)
 
-        return obses, actions, rewards, next_obses, dones
+        return obses, actions, rewards, next_obses, dones, log_prob
 
     def save(self, root_dir, step) -> None:
         make_dir(root_dir, 'buffer') if root_dir else None
@@ -66,6 +70,7 @@ class ReplayBuffer(object):
         np.savez_compressed(os.path.join(path, 'action.npz'), self.actions)
         np.savez_compressed(os.path.join(path, 'reward.npz'), self.rewards)
         np.savez_compressed(os.path.join(path, 'done.npz'), self.dones)
+        np.savez_compressed(os.path.join(path, 'log_prob.npz'), self.log_prob)
 
         info = dict()
         info['idx'] = self.idx
@@ -85,6 +90,7 @@ class ReplayBuffer(object):
         self.actions = np.load(os.path.join(path, 'action.npz'))['arr_0']
         self.rewards = np.load(os.path.join(path, 'reward.npz'))['arr_0']
         self.dones = np.load(os.path.join(path, 'done.npz'))['arr_0']
+        self.log_prob = np.load(os.path.join(path, 'log_prob.npz'))['arr_0']
 
         with open(os.path.join(path, 'info.txt'), 'r') as f:
             info = json.load(f)

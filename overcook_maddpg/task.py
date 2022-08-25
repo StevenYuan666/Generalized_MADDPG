@@ -70,10 +70,12 @@ class Task(object):
         action_shape = [len(self.env_agent_types), cfg.agent.params.action_dim if not self.discrete_action else 1]
         reward_shape = [len(self.env_agent_types), 1]
         dones_shape = [len(self.env_agent_types), 1]
+        log_prob_shape = [len(self.env_agent_types), 1]
         self.replay_buffer = ReplayBuffer(obs_shape=obs_shape,
                                           action_shape=action_shape,
                                           reward_shape=reward_shape,
                                           dones_shape=dones_shape,
+                                          log_prob_shape=log_prob_shape,
                                           capacity=int(cfg.replay_buffer_capacity),
                                           device=self.device)
 
@@ -123,9 +125,6 @@ class Task(object):
 
                 self.ou_percentage = max(0, self.ou_exploration_steps - (
                         self.step - self.num_seed_steps)) / self.ou_exploration_steps
-                self.agent.scale_noise(
-                    self.ou_final_scale + (self.ou_init_scale - self.ou_final_scale) * self.ou_percentage)
-                self.agent.reset_noise()
                 if self.episode != 0:
                     # print("TRAINING:\n", "\tENV name: ", str(self.cfg.env), "Episode: ", str(self.episode),
                     #       "Rewards: ", str(self.episode_reward))
@@ -168,8 +167,9 @@ class Task(object):
             if self.discrete_action: action = action.reshape(-1, 1)
 
             dones = np.array([self.done for _ in self.env.agents]).reshape(-1, 1)
+            log_prob = np.array([a.log_prob for a in self.agent.agents]).reshape(-1, 1)
 
-            self.replay_buffer.add(self.obs, action, rewards, next_obs, dones)
+            self.replay_buffer.add(self.obs, action, rewards, next_obs, dones, log_prob)
 
             self.obs = next_obs
             self.episode_step += 1

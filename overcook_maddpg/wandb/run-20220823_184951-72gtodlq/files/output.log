@@ -1,0 +1,1652 @@
+
+Meta Training 1 sampling 4 tasks
+/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'train': Defaults list is missing `_self_`. See https://hydra.cc/docs/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/model/maddpg.py:70: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:201.)
+  target_actions = torch.Tensor([onehot_from_logits(policy(next_obs)).detach().cpu().numpy() for policy, next_obs in
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 1
+	Training_Avg_Rewards:  [15.333333333333334, 7.666666666666667, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 2 sampling 4 tasks
+/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py:64: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  np.save("/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/result/training_info.npy", np.array(result))
+Meta Update: 2
+	Training_Avg_Rewards:  [4.0, 9.333333333333334, 7.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 3 sampling 4 tasks
+Meta Update: 3
+	Training_Avg_Rewards:  [5.666666666666667, 13.666666666666666, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 4 sampling 4 tasks
+Meta Update: 4
+	Training_Avg_Rewards:  [10.0, 11.0, 5.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 5 sampling 4 tasks
+Meta Update: 5
+	Training_Avg_Rewards:  [8.333333333333334, 5.0, 10.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 6 sampling 4 tasks
+Meta Update: 6
+	Training_Avg_Rewards:  [11.0, 9.666666666666666, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 7 sampling 4 tasks
+Meta Update: 7
+	Training_Avg_Rewards:  [13.0, 9.0, 6.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 8 sampling 4 tasks
+Meta Update: 8
+	Training_Avg_Rewards:  [7.333333333333333, 15.666666666666666, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 9 sampling 4 tasks
+Meta Update: 9
+	Training_Avg_Rewards:  [5.666666666666667, 6.0, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 10 sampling 4 tasks
+Meta Update: 10
+	Training_Avg_Rewards:  [11.0, 7.666666666666667, 1.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 11 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 11
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 12 sampling 4 tasks
+Meta Update: 12
+	Training_Avg_Rewards:  [7.333333333333333, 7.666666666666667, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 13 sampling 4 tasks
+Meta Update: 13
+	Training_Avg_Rewards:  [14.666666666666666, 6.666666666666667, 10.333333333333334, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 14 sampling 4 tasks
+Meta Update: 14
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 15 sampling 4 tasks
+Meta Update: 15
+	Training_Avg_Rewards:  [4.666666666666667, 6.666666666666667, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 16 sampling 4 tasks
+Meta Update: 16
+	Training_Avg_Rewards:  [6.666666666666667, 14.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 17 sampling 4 tasks
+Meta Update: 17
+	Training_Avg_Rewards:  [9.333333333333334, 13.0, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 18 sampling 4 tasks
+Meta Update: 18
+	Training_Avg_Rewards:  [15.666666666666666, 17.333333333333332, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 19 sampling 4 tasks
+Meta Update: 19
+	Training_Avg_Rewards:  [8.333333333333334, 8.666666666666666, 6.666666666666667, 5.666666666666667]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 20 sampling 4 tasks
+Meta Update: 20
+	Training_Avg_Rewards:  [7.333333333333333, 10.333333333333334, 6.0, 3.6666666666666665]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 21 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 21
+	Training_Avg_Rewards:  [9.333333333333334, 9.333333333333334, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 22 sampling 4 tasks
+Meta Update: 22
+	Training_Avg_Rewards:  [8.333333333333334, 3.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 23 sampling 4 tasks
+Meta Update: 23
+	Training_Avg_Rewards:  [7.333333333333333, 9.666666666666666, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 24 sampling 4 tasks
+Meta Update: 24
+	Training_Avg_Rewards:  [5.666666666666667, 6.666666666666667, 10.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 25 sampling 4 tasks
+Meta Update: 25
+	Training_Avg_Rewards:  [14.0, 4.666666666666667, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 26 sampling 4 tasks
+Meta Update: 26
+	Training_Avg_Rewards:  [16.333333333333332, 7.666666666666667, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 27 sampling 4 tasks
+Meta Update: 27
+	Training_Avg_Rewards:  [9.333333333333334, 5.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 28 sampling 4 tasks
+Meta Update: 28
+	Training_Avg_Rewards:  [10.333333333333334, 11.0, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 29 sampling 4 tasks
+Meta Update: 29
+	Training_Avg_Rewards:  [12.0, 7.333333333333333, 7.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 30 sampling 4 tasks
+Meta Update: 30
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 31 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 31
+	Training_Avg_Rewards:  [7.333333333333333, 13.0, 4.0, 3.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 32 sampling 4 tasks
+Meta Update: 32
+	Training_Avg_Rewards:  [14.0, 5.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 33 sampling 4 tasks
+Meta Update: 33
+	Training_Avg_Rewards:  [14.666666666666666, 7.666666666666667, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 34 sampling 4 tasks
+Meta Update: 34
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 5.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 35 sampling 4 tasks
+Meta Update: 35
+	Training_Avg_Rewards:  [11.666666666666666, 7.0, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 36 sampling 4 tasks
+Meta Update: 36
+	Training_Avg_Rewards:  [8.333333333333334, 15.666666666666666, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 37 sampling 4 tasks
+Meta Update: 37
+	Training_Avg_Rewards:  [7.666666666666667, 14.0, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 38 sampling 4 tasks
+Meta Update: 38
+	Training_Avg_Rewards:  [8.666666666666666, 10.333333333333334, 5.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 39 sampling 4 tasks
+Meta Update: 39
+	Training_Avg_Rewards:  [10.333333333333334, 10.0, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 40 sampling 4 tasks
+Meta Update: 40
+	Training_Avg_Rewards:  [8.333333333333334, 4.666666666666667, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 41 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 41
+	Training_Avg_Rewards:  [7.333333333333333, 6.666666666666667, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 42 sampling 4 tasks
+Meta Update: 42
+	Training_Avg_Rewards:  [9.0, 6.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 43 sampling 4 tasks
+Meta Update: 43
+	Training_Avg_Rewards:  [10.333333333333334, 6.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 44 sampling 4 tasks
+Meta Update: 44
+	Training_Avg_Rewards:  [10.0, 14.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 45 sampling 4 tasks
+Meta Update: 45
+	Training_Avg_Rewards:  [9.333333333333334, 7.666666666666667, 4.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 46 sampling 4 tasks
+Meta Update: 46
+	Training_Avg_Rewards:  [9.333333333333334, 11.0, 3.6666666666666665, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 47 sampling 4 tasks
+Meta Update: 47
+	Training_Avg_Rewards:  [6.666666666666667, 3.0, 6.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 48 sampling 4 tasks
+Meta Update: 48
+	Training_Avg_Rewards:  [10.666666666666666, 4.666666666666667, 3.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 49 sampling 4 tasks
+Meta Update: 49
+	Training_Avg_Rewards:  [6.333333333333333, 11.0, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 50 sampling 4 tasks
+Meta Update: 50
+	Training_Avg_Rewards:  [6.333333333333333, 9.333333333333334, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 51 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 51
+	Training_Avg_Rewards:  [11.0, 11.333333333333334, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 52 sampling 4 tasks
+Meta Update: 52
+	Training_Avg_Rewards:  [8.333333333333334, 5.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 53 sampling 4 tasks
+Meta Update: 53
+	Training_Avg_Rewards:  [9.0, 6.666666666666667, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 54 sampling 4 tasks
+Meta Update: 54
+	Training_Avg_Rewards:  [13.666666666666666, 10.333333333333334, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 55 sampling 4 tasks
+Meta Update: 55
+	Training_Avg_Rewards:  [12.0, 7.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 56 sampling 4 tasks
+Meta Update: 56
+	Training_Avg_Rewards:  [4.666666666666667, 6.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 57 sampling 4 tasks
+Meta Update: 57
+	Training_Avg_Rewards:  [10.0, 4.0, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 58 sampling 4 tasks
+Meta Update: 58
+	Training_Avg_Rewards:  [3.6666666666666665, 2.0, 7.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 59 sampling 4 tasks
+Meta Update: 59
+	Training_Avg_Rewards:  [10.0, 3.0, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 60 sampling 4 tasks
+Meta Update: 60
+	Training_Avg_Rewards:  [10.0, 4.666666666666667, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 61 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 61
+	Training_Avg_Rewards:  [9.333333333333334, 7.666666666666667, 5.666666666666667, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 62 sampling 4 tasks
+Meta Update: 62
+	Training_Avg_Rewards:  [11.0, 18.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 63 sampling 4 tasks
+Meta Update: 63
+	Training_Avg_Rewards:  [12.0, 9.333333333333334, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 64 sampling 4 tasks
+Meta Update: 64
+	Training_Avg_Rewards:  [15.0, 4.0, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 65 sampling 4 tasks
+Meta Update: 65
+	Training_Avg_Rewards:  [9.333333333333334, 15.0, 8.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 66 sampling 4 tasks
+Meta Update: 66
+	Training_Avg_Rewards:  [13.0, 7.666666666666667, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 67 sampling 4 tasks
+Meta Update: 67
+	Training_Avg_Rewards:  [10.333333333333334, 7.666666666666667, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 68 sampling 4 tasks
+Meta Update: 68
+	Training_Avg_Rewards:  [8.666666666666666, 6.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 69 sampling 4 tasks
+Meta Update: 69
+	Training_Avg_Rewards:  [10.0, 14.0, 10.333333333333334, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 70 sampling 4 tasks
+Meta Update: 70
+	Training_Avg_Rewards:  [4.666666666666667, 6.666666666666667, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 71 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 71
+	Training_Avg_Rewards:  [6.333333333333333, 10.333333333333334, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 72 sampling 4 tasks
+Meta Update: 72
+	Training_Avg_Rewards:  [5.666666666666667, 11.333333333333334, 6.666666666666667, 3.6666666666666665]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 73 sampling 4 tasks
+Meta Update: 73
+	Training_Avg_Rewards:  [15.666666666666666, 7.0, 5.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 74 sampling 4 tasks
+Meta Update: 74
+	Training_Avg_Rewards:  [12.666666666666666, 8.666666666666666, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 75 sampling 4 tasks
+Meta Update: 75
+	Training_Avg_Rewards:  [12.333333333333334, 6.666666666666667, 3.6666666666666665, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 76 sampling 4 tasks
+Meta Update: 76
+	Training_Avg_Rewards:  [13.0, 6.666666666666667, 1.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 77 sampling 4 tasks
+Meta Update: 77
+	Training_Avg_Rewards:  [5.666666666666667, 9.333333333333334, 8.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 78 sampling 4 tasks
+Meta Update: 78
+	Training_Avg_Rewards:  [13.0, 12.666666666666666, 3.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 79 sampling 4 tasks
+Meta Update: 79
+	Training_Avg_Rewards:  [7.666666666666667, 6.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 80 sampling 4 tasks
+Meta Update: 80
+	Training_Avg_Rewards:  [5.666666666666667, 6.666666666666667, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 81 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 81
+	Training_Avg_Rewards:  [8.333333333333334, 11.333333333333334, 6.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 82 sampling 4 tasks
+Meta Update: 82
+	Training_Avg_Rewards:  [5.666666666666667, 8.666666666666666, 5.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 83 sampling 4 tasks
+Meta Update: 83
+	Training_Avg_Rewards:  [7.333333333333333, 3.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 84 sampling 4 tasks
+Meta Update: 84
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 85 sampling 4 tasks
+Meta Update: 85
+	Training_Avg_Rewards:  [12.0, 7.0, 5.666666666666667, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 86 sampling 4 tasks
+Meta Update: 86
+	Training_Avg_Rewards:  [14.666666666666666, 4.0, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 87 sampling 4 tasks
+Meta Update: 87
+	Training_Avg_Rewards:  [12.0, 9.333333333333334, 5.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 88 sampling 4 tasks
+Meta Update: 88
+	Training_Avg_Rewards:  [5.666666666666667, 7.666666666666667, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 89 sampling 4 tasks
+Meta Update: 89
+	Training_Avg_Rewards:  [9.333333333333334, 7.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 90 sampling 4 tasks
+Meta Update: 90
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 9.333333333333334, 2.6666666666666665]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 91 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 91
+	Training_Avg_Rewards:  [9.0, 4.0, 7.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 92 sampling 4 tasks
+Meta Update: 92
+	Training_Avg_Rewards:  [12.0, 7.0, 2.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 93 sampling 4 tasks
+Meta Update: 93
+	Training_Avg_Rewards:  [3.6666666666666665, 14.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 94 sampling 4 tasks
+Meta Update: 94
+	Training_Avg_Rewards:  [9.333333333333334, 7.0, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 95 sampling 4 tasks
+Meta Update: 95
+	Training_Avg_Rewards:  [10.333333333333334, 13.333333333333334, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 96 sampling 4 tasks
+Meta Update: 96
+	Training_Avg_Rewards:  [7.666666666666667, 5.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 97 sampling 4 tasks
+Meta Update: 97
+	Training_Avg_Rewards:  [10.333333333333334, 10.333333333333334, 8.666666666666666, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 98 sampling 4 tasks
+Meta Update: 98
+	Training_Avg_Rewards:  [6.333333333333333, 3.0, 1.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 99 sampling 4 tasks
+Meta Update: 99
+	Training_Avg_Rewards:  [13.0, 7.666666666666667, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 100 sampling 4 tasks
+Meta Update: 100
+	Training_Avg_Rewards:  [9.0, 5.0, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 101 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 101
+	Training_Avg_Rewards:  [17.666666666666668, 6.333333333333333, 6.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 102 sampling 4 tasks
+Meta Update: 102
+	Training_Avg_Rewards:  [7.333333333333333, 9.666666666666666, 4.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 103 sampling 4 tasks
+Meta Update: 103
+	Training_Avg_Rewards:  [10.0, 6.666666666666667, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 104 sampling 4 tasks
+Meta Update: 104
+	Training_Avg_Rewards:  [3.6666666666666665, 3.0, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 105 sampling 4 tasks
+Meta Update: 105
+	Training_Avg_Rewards:  [8.333333333333334, 7.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 106 sampling 4 tasks
+Meta Update: 106
+	Training_Avg_Rewards:  [5.666666666666667, 12.0, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 107 sampling 4 tasks
+Meta Update: 107
+	Training_Avg_Rewards:  [5.666666666666667, 9.333333333333334, 6.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 108 sampling 4 tasks
+Meta Update: 108
+	Training_Avg_Rewards:  [17.0, 10.0, 7.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 109 sampling 4 tasks
+Meta Update: 109
+	Training_Avg_Rewards:  [6.333333333333333, 6.666666666666667, 4.666666666666667, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 110 sampling 4 tasks
+Meta Update: 110
+	Training_Avg_Rewards:  [6.333333333333333, 5.0, 7.333333333333333, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 111 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 111
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 9.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 112 sampling 4 tasks
+Meta Update: 112
+	Training_Avg_Rewards:  [12.666666666666666, 9.333333333333334, 6.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 113 sampling 4 tasks
+Meta Update: 113
+	Training_Avg_Rewards:  [11.0, 5.0, 9.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 114 sampling 4 tasks
+Meta Update: 114
+	Training_Avg_Rewards:  [7.333333333333333, 9.333333333333334, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 115 sampling 4 tasks
+Meta Update: 115
+	Training_Avg_Rewards:  [11.0, 6.0, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 116 sampling 4 tasks
+Meta Update: 116
+	Training_Avg_Rewards:  [9.333333333333334, 2.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 117 sampling 4 tasks
+Meta Update: 117
+	Training_Avg_Rewards:  [11.0, 6.666666666666667, 8.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 118 sampling 4 tasks
+Meta Update: 118
+	Training_Avg_Rewards:  [11.333333333333334, 4.0, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 119 sampling 4 tasks
+Meta Update: 119
+	Training_Avg_Rewards:  [7.666666666666667, 6.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 120 sampling 4 tasks
+Meta Update: 120
+	Training_Avg_Rewards:  [13.0, 8.333333333333334, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 121 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 121
+	Training_Avg_Rewards:  [6.666666666666667, 5.0, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 122 sampling 4 tasks
+Meta Update: 122
+	Training_Avg_Rewards:  [4.666666666666667, 10.333333333333334, 6.333333333333333, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 123 sampling 4 tasks
+Meta Update: 123
+	Training_Avg_Rewards:  [8.333333333333334, 6.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 124 sampling 4 tasks
+Meta Update: 124
+	Training_Avg_Rewards:  [17.666666666666668, 10.333333333333334, 7.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 125 sampling 4 tasks
+Meta Update: 125
+	Training_Avg_Rewards:  [13.0, 6.0, 6.333333333333333, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 126 sampling 4 tasks
+Meta Update: 126
+	Training_Avg_Rewards:  [14.666666666666666, 7.666666666666667, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 127 sampling 4 tasks
+Meta Update: 127
+	Training_Avg_Rewards:  [5.666666666666667, 9.666666666666666, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 128 sampling 4 tasks
+Meta Update: 128
+	Training_Avg_Rewards:  [9.0, 5.0, 1.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 129 sampling 4 tasks
+Meta Update: 129
+	Training_Avg_Rewards:  [11.333333333333334, 5.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 130 sampling 4 tasks
+Meta Update: 130
+	Training_Avg_Rewards:  [12.0, 5.666666666666667, 9.666666666666666, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 131 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 131
+	Training_Avg_Rewards:  [3.6666666666666665, 6.0, 2.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 132 sampling 4 tasks
+Meta Update: 132
+	Training_Avg_Rewards:  [7.333333333333333, 5.0, 9.666666666666666, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 133 sampling 4 tasks
+Meta Update: 133
+	Training_Avg_Rewards:  [12.0, 5.0, 6.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 134 sampling 4 tasks
+Meta Update: 134
+	Training_Avg_Rewards:  [7.333333333333333, 8.333333333333334, 7.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 135 sampling 4 tasks
+Meta Update: 135
+	Training_Avg_Rewards:  [10.0, 8.333333333333334, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 136 sampling 4 tasks
+Meta Update: 136
+	Training_Avg_Rewards:  [10.0, 6.666666666666667, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 137 sampling 4 tasks
+Meta Update: 137
+	Training_Avg_Rewards:  [11.0, 17.666666666666668, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 138 sampling 4 tasks
+Meta Update: 138
+	Training_Avg_Rewards:  [8.333333333333334, 3.6666666666666665, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 139 sampling 4 tasks
+Meta Update: 139
+	Training_Avg_Rewards:  [10.0, 4.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 140 sampling 4 tasks
+Meta Update: 140
+	Training_Avg_Rewards:  [15.333333333333334, 10.666666666666666, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 141 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 141
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 6.333333333333333, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 142 sampling 4 tasks
+Meta Update: 142
+	Training_Avg_Rewards:  [15.666666666666666, 14.0, 6.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 143 sampling 4 tasks
+Meta Update: 143
+	Training_Avg_Rewards:  [7.333333333333333, 4.0, 9.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 144 sampling 4 tasks
+Meta Update: 144
+	Training_Avg_Rewards:  [13.0, 4.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 145 sampling 4 tasks
+Meta Update: 145
+	Training_Avg_Rewards:  [11.0, 7.0, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 146 sampling 4 tasks
+Meta Update: 146
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 147 sampling 4 tasks
+Meta Update: 147
+	Training_Avg_Rewards:  [4.666666666666667, 5.0, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 148 sampling 4 tasks
+Meta Update: 148
+	Training_Avg_Rewards:  [5.666666666666667, 9.666666666666666, 6.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 149 sampling 4 tasks
+Meta Update: 149
+	Training_Avg_Rewards:  [6.333333333333333, 6.0, 3.6666666666666665, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 150 sampling 4 tasks
+Meta Update: 150
+	Training_Avg_Rewards:  [10.0, 6.666666666666667, 4.0, 3.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 151 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 151
+	Training_Avg_Rewards:  [8.333333333333334, 5.0, 5.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 152 sampling 4 tasks
+Meta Update: 152
+	Training_Avg_Rewards:  [8.333333333333334, 11.333333333333334, 8.666666666666666, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 153 sampling 4 tasks
+Meta Update: 153
+	Training_Avg_Rewards:  [3.6666666666666665, 5.0, 3.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 154 sampling 4 tasks
+Meta Update: 154
+	Training_Avg_Rewards:  [12.0, 8.666666666666666, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 155 sampling 4 tasks
+Meta Update: 155
+	Training_Avg_Rewards:  [14.666666666666666, 5.666666666666667, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 156 sampling 4 tasks
+Meta Update: 156
+	Training_Avg_Rewards:  [12.666666666666666, 9.333333333333334, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 157 sampling 4 tasks
+Meta Update: 157
+	Training_Avg_Rewards:  [12.0, 5.666666666666667, 10.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 158 sampling 4 tasks
+Meta Update: 158
+	Training_Avg_Rewards:  [8.333333333333334, 6.666666666666667, 3.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 159 sampling 4 tasks
+Meta Update: 159
+	Training_Avg_Rewards:  [8.333333333333334, 8.333333333333334, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 160 sampling 4 tasks
+Meta Update: 160
+	Training_Avg_Rewards:  [8.333333333333334, 6.0, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 161 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 161
+	Training_Avg_Rewards:  [12.0, 7.0, 3.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 162 sampling 4 tasks
+Meta Update: 162
+	Training_Avg_Rewards:  [15.333333333333334, 5.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 163 sampling 4 tasks
+Meta Update: 163
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 9.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 164 sampling 4 tasks
+Meta Update: 164
+	Training_Avg_Rewards:  [10.0, 8.333333333333334, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 165 sampling 4 tasks
+Meta Update: 165
+	Training_Avg_Rewards:  [7.333333333333333, 6.0, 13.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 166 sampling 4 tasks
+Meta Update: 166
+	Training_Avg_Rewards:  [12.0, 6.666666666666667, 6.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 167 sampling 4 tasks
+Meta Update: 167
+	Training_Avg_Rewards:  [11.333333333333334, 4.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 168 sampling 4 tasks
+Meta Update: 168
+	Training_Avg_Rewards:  [4.666666666666667, 13.666666666666666, 4.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 169 sampling 4 tasks
+Meta Update: 169
+	Training_Avg_Rewards:  [12.666666666666666, 3.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 170 sampling 4 tasks
+Meta Update: 170
+	Training_Avg_Rewards:  [11.0, 9.666666666666666, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 171 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 171
+	Training_Avg_Rewards:  [13.666666666666666, 5.0, 6.0, 2.6666666666666665]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 172 sampling 4 tasks
+Meta Update: 172
+	Training_Avg_Rewards:  [11.0, 8.333333333333334, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 173 sampling 4 tasks
+Meta Update: 173
+	Training_Avg_Rewards:  [11.333333333333334, 7.333333333333333, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 174 sampling 4 tasks
+Meta Update: 174
+	Training_Avg_Rewards:  [13.0, 7.666666666666667, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 175 sampling 4 tasks
+Meta Update: 175
+	Training_Avg_Rewards:  [13.0, 7.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 176 sampling 4 tasks
+Meta Update: 176
+	Training_Avg_Rewards:  [11.333333333333334, 10.0, 8.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 177 sampling 4 tasks
+Meta Update: 177
+	Training_Avg_Rewards:  [3.6666666666666665, 7.666666666666667, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 178 sampling 4 tasks
+Meta Update: 178
+	Training_Avg_Rewards:  [7.666666666666667, 2.0, 9.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 179 sampling 4 tasks
+Meta Update: 179
+	Training_Avg_Rewards:  [9.333333333333334, 11.0, 10.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 180 sampling 4 tasks
+Meta Update: 180
+	Training_Avg_Rewards:  [13.0, 5.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 181 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 181
+	Training_Avg_Rewards:  [6.666666666666667, 6.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 182 sampling 4 tasks
+Meta Update: 182
+	Training_Avg_Rewards:  [4.666666666666667, 4.666666666666667, 6.0, 3.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 183 sampling 4 tasks
+Meta Update: 183
+	Training_Avg_Rewards:  [12.0, 7.666666666666667, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 184 sampling 4 tasks
+Meta Update: 184
+	Training_Avg_Rewards:  [9.333333333333334, 8.333333333333334, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 185 sampling 4 tasks
+Meta Update: 185
+	Training_Avg_Rewards:  [16.666666666666668, 12.333333333333334, 3.6666666666666665, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 186 sampling 4 tasks
+Meta Update: 186
+	Training_Avg_Rewards:  [10.333333333333334, 10.333333333333334, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 187 sampling 4 tasks
+Meta Update: 187
+	Training_Avg_Rewards:  [8.333333333333334, 10.333333333333334, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 188 sampling 4 tasks
+Meta Update: 188
+	Training_Avg_Rewards:  [12.0, 5.0, 7.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 189 sampling 4 tasks
+Meta Update: 189
+	Training_Avg_Rewards:  [11.0, 6.666666666666667, 6.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 190 sampling 4 tasks
+Meta Update: 190
+	Training_Avg_Rewards:  [9.0, 7.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 191 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 191
+	Training_Avg_Rewards:  [7.333333333333333, 9.333333333333334, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 192 sampling 4 tasks
+Meta Update: 192
+	Training_Avg_Rewards:  [5.666666666666667, 5.666666666666667, 5.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 193 sampling 4 tasks
+Meta Update: 193
+	Training_Avg_Rewards:  [9.333333333333334, 10.333333333333334, 12.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 194 sampling 4 tasks
+Meta Update: 194
+	Training_Avg_Rewards:  [7.333333333333333, 6.666666666666667, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 195 sampling 4 tasks
+Meta Update: 195
+	Training_Avg_Rewards:  [6.333333333333333, 7.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 196 sampling 4 tasks
+Meta Update: 196
+	Training_Avg_Rewards:  [10.0, 9.333333333333334, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 197 sampling 4 tasks
+Meta Update: 197
+	Training_Avg_Rewards:  [6.333333333333333, 8.333333333333334, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 198 sampling 4 tasks
+Meta Update: 198
+	Training_Avg_Rewards:  [10.333333333333334, 13.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 199 sampling 4 tasks
+Meta Update: 199
+	Training_Avg_Rewards:  [9.0, 5.0, 5.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 200 sampling 4 tasks
+Meta Update: 200
+	Training_Avg_Rewards:  [12.0, 8.666666666666666, 7.666666666666667, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 201 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 201
+	Training_Avg_Rewards:  [10.333333333333334, 10.666666666666666, 6.666666666666667, 3.6666666666666665]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 202 sampling 4 tasks
+Meta Update: 202
+	Training_Avg_Rewards:  [9.333333333333334, 8.666666666666666, 6.0, 3.6666666666666665]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 203 sampling 4 tasks
+Meta Update: 203
+	Training_Avg_Rewards:  [11.0, 3.0, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 204 sampling 4 tasks
+Meta Update: 204
+	Training_Avg_Rewards:  [12.666666666666666, 4.0, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 205 sampling 4 tasks
+Meta Update: 205
+	Training_Avg_Rewards:  [7.666666666666667, 7.333333333333333, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 206 sampling 4 tasks
+Meta Update: 206
+	Training_Avg_Rewards:  [12.0, 7.666666666666667, 8.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 207 sampling 4 tasks
+Meta Update: 207
+	Training_Avg_Rewards:  [11.0, 3.0, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 208 sampling 4 tasks
+Meta Update: 208
+	Training_Avg_Rewards:  [7.333333333333333, 5.666666666666667, 8.666666666666666, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 209 sampling 4 tasks
+Meta Update: 209
+	Training_Avg_Rewards:  [7.333333333333333, 5.0, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 210 sampling 4 tasks
+Meta Update: 210
+	Training_Avg_Rewards:  [9.333333333333334, 5.0, 5.666666666666667, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 211 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 211
+	Training_Avg_Rewards:  [9.333333333333334, 8.666666666666666, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 212 sampling 4 tasks
+Meta Update: 212
+	Training_Avg_Rewards:  [18.666666666666668, 4.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 213 sampling 4 tasks
+Meta Update: 213
+	Training_Avg_Rewards:  [10.0, 8.666666666666666, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 214 sampling 4 tasks
+Meta Update: 214
+	Training_Avg_Rewards:  [9.0, 9.333333333333334, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 215 sampling 4 tasks
+Meta Update: 215
+	Training_Avg_Rewards:  [8.333333333333334, 9.666666666666666, 10.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 216 sampling 4 tasks
+Meta Update: 216
+	Training_Avg_Rewards:  [11.666666666666666, 4.0, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 217 sampling 4 tasks
+Meta Update: 217
+	Training_Avg_Rewards:  [10.0, 10.0, 5.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 218 sampling 4 tasks
+Meta Update: 218
+	Training_Avg_Rewards:  [13.333333333333334, 6.666666666666667, 9.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 219 sampling 4 tasks
+Meta Update: 219
+	Training_Avg_Rewards:  [8.333333333333334, 13.333333333333334, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 220 sampling 4 tasks
+Meta Update: 220
+	Training_Avg_Rewards:  [4.666666666666667, 7.333333333333333, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 221 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 221
+	Training_Avg_Rewards:  [12.0, 10.333333333333334, 7.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 222 sampling 4 tasks
+Meta Update: 222
+	Training_Avg_Rewards:  [7.333333333333333, 6.0, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 223 sampling 4 tasks
+Meta Update: 223
+	Training_Avg_Rewards:  [10.0, 5.666666666666667, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 224 sampling 4 tasks
+Meta Update: 224
+	Training_Avg_Rewards:  [13.0, 6.333333333333333, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 225 sampling 4 tasks
+Meta Update: 225
+	Training_Avg_Rewards:  [11.0, 9.333333333333334, 6.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 226 sampling 4 tasks
+Meta Update: 226
+	Training_Avg_Rewards:  [13.666666666666666, 11.333333333333334, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 227 sampling 4 tasks
+Meta Update: 227
+	Training_Avg_Rewards:  [16.0, 5.666666666666667, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 228 sampling 4 tasks
+Meta Update: 228
+	Training_Avg_Rewards:  [9.333333333333334, 4.666666666666667, 6.333333333333333, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 229 sampling 4 tasks
+Meta Update: 229
+	Training_Avg_Rewards:  [13.0, 7.333333333333333, 6.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 230 sampling 4 tasks
+Meta Update: 230
+	Training_Avg_Rewards:  [8.333333333333334, 5.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 231 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 231
+	Training_Avg_Rewards:  [8.333333333333334, 7.333333333333333, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 232 sampling 4 tasks
+Meta Update: 232
+	Training_Avg_Rewards:  [8.333333333333334, 7.333333333333333, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 233 sampling 4 tasks
+Meta Update: 233
+	Training_Avg_Rewards:  [9.333333333333334, 11.333333333333334, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 234 sampling 4 tasks
+Meta Update: 234
+	Training_Avg_Rewards:  [7.333333333333333, 13.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 235 sampling 4 tasks
+Meta Update: 235
+	Training_Avg_Rewards:  [7.333333333333333, 12.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 236 sampling 4 tasks
+Meta Update: 236
+	Training_Avg_Rewards:  [11.0, 4.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 237 sampling 4 tasks
+Meta Update: 237
+	Training_Avg_Rewards:  [10.0, 5.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 238 sampling 4 tasks
+Meta Update: 238
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 239 sampling 4 tasks
+Meta Update: 239
+	Training_Avg_Rewards:  [11.666666666666666, 5.0, 9.666666666666666, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 240 sampling 4 tasks
+Meta Update: 240
+	Training_Avg_Rewards:  [8.333333333333334, 14.666666666666666, 6.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 241 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 241
+	Training_Avg_Rewards:  [8.333333333333334, 8.333333333333334, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 242 sampling 4 tasks
+Meta Update: 242
+	Training_Avg_Rewards:  [10.0, 7.666666666666667, 5.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 243 sampling 4 tasks
+Meta Update: 243
+	Training_Avg_Rewards:  [10.0, 11.0, 7.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 244 sampling 4 tasks
+Meta Update: 244
+	Training_Avg_Rewards:  [6.333333333333333, 3.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 245 sampling 4 tasks
+Meta Update: 245
+	Training_Avg_Rewards:  [8.333333333333334, 4.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 246 sampling 4 tasks
+Meta Update: 246
+	Training_Avg_Rewards:  [7.666666666666667, 11.0, 13.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 247 sampling 4 tasks
+Meta Update: 247
+	Training_Avg_Rewards:  [9.333333333333334, 7.333333333333333, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 248 sampling 4 tasks
+Meta Update: 248
+	Training_Avg_Rewards:  [17.333333333333332, 8.333333333333334, 7.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 249 sampling 4 tasks
+Meta Update: 249
+	Training_Avg_Rewards:  [12.666666666666666, 4.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 250 sampling 4 tasks
+Meta Update: 250
+	Training_Avg_Rewards:  [12.666666666666666, 3.0, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 251 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 251
+	Training_Avg_Rewards:  [16.666666666666668, 6.666666666666667, 3.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 252 sampling 4 tasks
+Meta Update: 252
+	Training_Avg_Rewards:  [6.666666666666667, 9.333333333333334, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 253 sampling 4 tasks
+Meta Update: 253
+	Training_Avg_Rewards:  [13.0, 3.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 254 sampling 4 tasks
+Meta Update: 254
+	Training_Avg_Rewards:  [17.666666666666668, 8.333333333333334, 6.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 255 sampling 4 tasks
+Meta Update: 255
+	Training_Avg_Rewards:  [8.333333333333334, 8.333333333333334, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 256 sampling 4 tasks
+Meta Update: 256
+	Training_Avg_Rewards:  [9.333333333333334, 5.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 257 sampling 4 tasks
+Meta Update: 257
+	Training_Avg_Rewards:  [11.0, 5.0, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 258 sampling 4 tasks
+Meta Update: 258
+	Training_Avg_Rewards:  [11.333333333333334, 8.666666666666666, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 259 sampling 4 tasks
+Meta Update: 259
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 11.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 260 sampling 4 tasks
+Meta Update: 260
+	Training_Avg_Rewards:  [7.333333333333333, 6.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 261 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 261
+	Training_Avg_Rewards:  [12.333333333333334, 3.0, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 262 sampling 4 tasks
+Meta Update: 262
+	Training_Avg_Rewards:  [7.333333333333333, 8.666666666666666, 2.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 263 sampling 4 tasks
+Meta Update: 263
+	Training_Avg_Rewards:  [11.0, 7.333333333333333, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 264 sampling 4 tasks
+Meta Update: 264
+	Training_Avg_Rewards:  [10.0, 7.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 265 sampling 4 tasks
+Meta Update: 265
+	Training_Avg_Rewards:  [9.333333333333334, 7.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 266 sampling 4 tasks
+Meta Update: 266
+	Training_Avg_Rewards:  [11.333333333333334, 12.0, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 267 sampling 4 tasks
+Meta Update: 267
+	Training_Avg_Rewards:  [10.333333333333334, 3.0, 7.333333333333333, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 268 sampling 4 tasks
+Meta Update: 268
+	Training_Avg_Rewards:  [10.0, 5.0, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 269 sampling 4 tasks
+Meta Update: 269
+	Training_Avg_Rewards:  [6.333333333333333, 10.333333333333334, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 270 sampling 4 tasks
+Meta Update: 270
+	Training_Avg_Rewards:  [5.666666666666667, 7.666666666666667, 6.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 271 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 271
+	Training_Avg_Rewards:  [10.333333333333334, 5.666666666666667, 8.333333333333334, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 272 sampling 4 tasks
+Meta Update: 272
+	Training_Avg_Rewards:  [7.333333333333333, 7.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 273 sampling 4 tasks
+Meta Update: 273
+	Training_Avg_Rewards:  [13.666666666666666, 6.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 274 sampling 4 tasks
+Meta Update: 274
+	Training_Avg_Rewards:  [10.0, 6.666666666666667, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 275 sampling 4 tasks
+Meta Update: 275
+	Training_Avg_Rewards:  [4.666666666666667, 6.0, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 276 sampling 4 tasks
+Meta Update: 276
+	Training_Avg_Rewards:  [15.0, 7.666666666666667, 10.666666666666666, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 277 sampling 4 tasks
+Meta Update: 277
+	Training_Avg_Rewards:  [5.666666666666667, 10.333333333333334, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 278 sampling 4 tasks
+Meta Update: 278
+	Training_Avg_Rewards:  [8.333333333333334, 10.333333333333334, 4.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 279 sampling 4 tasks
+Meta Update: 279
+	Training_Avg_Rewards:  [12.0, 5.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 280 sampling 4 tasks
+Meta Update: 280
+	Training_Avg_Rewards:  [14.666666666666666, 4.666666666666667, 7.666666666666667, 4.666666666666667]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 281 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 281
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 282 sampling 4 tasks
+Meta Update: 282
+	Training_Avg_Rewards:  [3.6666666666666665, 8.666666666666666, 10.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 283 sampling 4 tasks
+Meta Update: 283
+	Training_Avg_Rewards:  [9.666666666666666, 7.666666666666667, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 284 sampling 4 tasks
+Meta Update: 284
+	Training_Avg_Rewards:  [10.0, 8.333333333333334, 4.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 285 sampling 4 tasks
+Meta Update: 285
+	Training_Avg_Rewards:  [7.333333333333333, 6.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 286 sampling 4 tasks
+Meta Update: 286
+	Training_Avg_Rewards:  [10.0, 12.333333333333334, 3.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 287 sampling 4 tasks
+Meta Update: 287
+	Training_Avg_Rewards:  [7.666666666666667, 6.666666666666667, 9.333333333333334, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 288 sampling 4 tasks
+Meta Update: 288
+	Training_Avg_Rewards:  [9.333333333333334, 5.666666666666667, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 289 sampling 4 tasks
+Meta Update: 289
+	Training_Avg_Rewards:  [8.333333333333334, 5.0, 3.6666666666666665, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 290 sampling 4 tasks
+Meta Update: 290
+	Training_Avg_Rewards:  [6.666666666666667, 10.666666666666666, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 291 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 291
+	Training_Avg_Rewards:  [10.0, 7.0, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 292 sampling 4 tasks
+Meta Update: 292
+	Training_Avg_Rewards:  [13.0, 10.333333333333334, 8.333333333333334, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 293 sampling 4 tasks
+Meta Update: 293
+	Training_Avg_Rewards:  [12.0, 3.0, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 294 sampling 4 tasks
+Meta Update: 294
+	Training_Avg_Rewards:  [5.666666666666667, 9.666666666666666, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 295 sampling 4 tasks
+Meta Update: 295
+	Training_Avg_Rewards:  [13.0, 6.0, 7.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 296 sampling 4 tasks
+Meta Update: 296
+	Training_Avg_Rewards:  [9.333333333333334, 3.6666666666666665, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 297 sampling 4 tasks
+Meta Update: 297
+	Training_Avg_Rewards:  [14.666666666666666, 11.0, 5.666666666666667, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 298 sampling 4 tasks
+Meta Update: 298
+	Training_Avg_Rewards:  [7.333333333333333, 7.333333333333333, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 299 sampling 4 tasks
+Meta Update: 299
+	Training_Avg_Rewards:  [19.666666666666668, 5.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 300 sampling 4 tasks
+Meta Update: 300
+	Training_Avg_Rewards:  [9.333333333333334, 3.0, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 301 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 301
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 302 sampling 4 tasks
+Meta Update: 302
+	Training_Avg_Rewards:  [7.666666666666667, 3.0, 8.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 303 sampling 4 tasks
+Meta Update: 303
+	Training_Avg_Rewards:  [6.333333333333333, 6.666666666666667, 8.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 304 sampling 4 tasks
+Meta Update: 304
+	Training_Avg_Rewards:  [5.666666666666667, 6.666666666666667, 8.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 305 sampling 4 tasks
+Meta Update: 305
+	Training_Avg_Rewards:  [5.666666666666667, 3.0, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 306 sampling 4 tasks
+Meta Update: 306
+	Training_Avg_Rewards:  [10.0, 11.333333333333334, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 307 sampling 4 tasks
+Meta Update: 307
+	Training_Avg_Rewards:  [4.666666666666667, 5.0, 2.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 308 sampling 4 tasks
+Meta Update: 308
+	Training_Avg_Rewards:  [9.0, 7.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 309 sampling 4 tasks
+Meta Update: 309
+	Training_Avg_Rewards:  [9.333333333333334, 3.0, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 310 sampling 4 tasks
+Meta Update: 310
+	Training_Avg_Rewards:  [12.0, 7.666666666666667, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 311 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 311
+	Training_Avg_Rewards:  [7.666666666666667, 6.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 312 sampling 4 tasks
+Meta Update: 312
+	Training_Avg_Rewards:  [9.333333333333334, 10.333333333333334, 8.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 313 sampling 4 tasks
+Meta Update: 313
+	Training_Avg_Rewards:  [8.333333333333334, 6.666666666666667, 6.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 314 sampling 4 tasks
+Meta Update: 314
+	Training_Avg_Rewards:  [6.666666666666667, 9.333333333333334, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 315 sampling 4 tasks
+Meta Update: 315
+	Training_Avg_Rewards:  [17.333333333333332, 6.666666666666667, 5.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 316 sampling 4 tasks
+Meta Update: 316
+	Training_Avg_Rewards:  [9.333333333333334, 5.0, 8.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 317 sampling 4 tasks
+Meta Update: 317
+	Training_Avg_Rewards:  [13.0, 12.333333333333334, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 318 sampling 4 tasks
+Meta Update: 318
+	Training_Avg_Rewards:  [3.6666666666666665, 9.333333333333334, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 319 sampling 4 tasks
+Meta Update: 319
+	Training_Avg_Rewards:  [6.666666666666667, 12.0, 4.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 320 sampling 4 tasks
+Error executing job with overrides: []
+Traceback (most recent call last):
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py", line 115, in main
+    leaner.train()
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py", line 32, in train
+    tasks = self.task_sampler.sample()
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/task_sampler.py", line 20, in sample
+    t = Task(cfg=cfg)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/task.py", line 25, in __init__
+    self.work_dir = os.getcwd()
+InterruptedError: [Errno 4] Interrupted system call
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Meta Update: 320
+	Training_Avg_Rewards:  [7.333333333333333, 11.333333333333334, 7.0, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 321 sampling 4 tasks

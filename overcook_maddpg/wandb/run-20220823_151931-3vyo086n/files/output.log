@@ -1,0 +1,162 @@
+/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/defaults_list.py:251: UserWarning: In 'train': Defaults list is missing `_self_`. See https://hydra.cc/docs/upgrades/1.0_to_1.1/default_composition_order for more information
+  warnings.warn(msg, UserWarning)
+Meta Training 1 sampling 4 tasks
+/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/model/maddpg.py:70: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at  ../torch/csrc/utils/tensor_new.cpp:201.)
+  target_actions = torch.Tensor([onehot_from_logits(policy(next_obs)).detach().cpu().numpy() for policy, next_obs in
+/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py:64: VisibleDeprecationWarning: Creating an ndarray from ragged nested sequences (which is a list-or-tuple of lists-or-tuples-or ndarrays with different lengths or shapes) is deprecated. If you meant to do this, you must specify 'dtype=object' when creating the ndarray.
+  np.save("/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/result/training_info.npy", np.array(result))
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 1
+	Training_Avg_Rewards:  [12.666666666666666, 6.666666666666667, 6.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 2 sampling 4 tasks
+Meta Update: 2
+	Training_Avg_Rewards:  [6.666666666666667, 11.0, 9.666666666666666, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 3 sampling 4 tasks
+Meta Update: 3
+	Training_Avg_Rewards:  [5.666666666666667, 8.333333333333334, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 4 sampling 4 tasks
+Meta Update: 4
+	Training_Avg_Rewards:  [9.0, 9.333333333333334, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 5 sampling 4 tasks
+Meta Update: 5
+	Training_Avg_Rewards:  [8.333333333333334, 7.666666666666667, 10.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 6 sampling 4 tasks
+Meta Update: 6
+	Training_Avg_Rewards:  [11.0, 6.666666666666667, 2.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 7 sampling 4 tasks
+Meta Update: 7
+	Training_Avg_Rewards:  [13.0, 9.666666666666666, 5.666666666666667, 1.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 8 sampling 4 tasks
+Meta Update: 8
+	Training_Avg_Rewards:  [7.333333333333333, 14.666666666666666, 3.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 9 sampling 4 tasks
+Meta Update: 9
+	Training_Avg_Rewards:  [5.666666666666667, 5.0, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 10 sampling 4 tasks
+Meta Update: 10
+	Training_Avg_Rewards:  [11.0, 10.333333333333334, 2.0, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 11 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 11
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 4.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 12 sampling 4 tasks
+Meta Update: 12
+	Training_Avg_Rewards:  [7.333333333333333, 5.0, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 13 sampling 4 tasks
+Meta Update: 13
+	Training_Avg_Rewards:  [14.666666666666666, 9.333333333333334, 10.333333333333334, 2.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 14 sampling 4 tasks
+Meta Update: 14
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 5.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 15 sampling 4 tasks
+Meta Update: 15
+	Training_Avg_Rewards:  [4.666666666666667, 6.666666666666667, 5.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 16 sampling 4 tasks
+Meta Update: 16
+	Training_Avg_Rewards:  [6.666666666666667, 11.333333333333334, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 17 sampling 4 tasks
+Meta Update: 17
+	Training_Avg_Rewards:  [9.333333333333334, 12.0, 7.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 18 sampling 4 tasks
+Meta Update: 18
+	Training_Avg_Rewards:  [15.666666666666666, 14.666666666666666, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 19 sampling 4 tasks
+Meta Update: 19
+	Training_Avg_Rewards:  [8.333333333333334, 8.666666666666666, 6.666666666666667, 5.666666666666667]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 20 sampling 4 tasks
+Meta Update: 20
+	Training_Avg_Rewards:  [7.333333333333333, 7.666666666666667, 6.0, 3.6666666666666665]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 21 sampling 4 tasks
+Saving training information and meta centralized q function parameters and successfully saved
+Meta Update: 21
+	Training_Avg_Rewards:  [9.333333333333334, 6.666666666666667, 8.666666666666666, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 22 sampling 4 tasks
+Meta Update: 22
+	Training_Avg_Rewards:  [8.333333333333334, 3.0, 7.666666666666667, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 23 sampling 4 tasks
+Meta Update: 23
+	Training_Avg_Rewards:  [7.333333333333333, 9.666666666666666, 6.0, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 24 sampling 4 tasks
+Meta Update: 24
+	Training_Avg_Rewards:  [5.666666666666667, 6.666666666666667, 10.333333333333334, 0.0]
+	inner_batch_avg_validation_return: 0.0
+	['asymmetric_advantages', 'cramped_room', 'coordination_ring', 'counter_circuit']: [0.0, 0.0, 0.0, 0.0]
+Meta Training 25 sampling 4 tasks
+Traceback (most recent call last):
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py", line 135, in <module>
+    main()
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/main.py", line 48, in decorated_main
+    _run_hydra(
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/utils.py", line 377, in _run_hydra
+    run_and_report(
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/utils.py", line 211, in run_and_report
+    return func()
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/utils.py", line 378, in <lambda>
+    lambda: hydra.run(
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/_internal/hydra.py", line 98, in run
+    ret = run_job(
+  File "/Users/stevenyuan/opt/anaconda3/envs/mujoco/lib/python3.8/site-packages/hydra/core/utils.py", line 160, in run_job
+    ret.return_value = task_function(task_cfg)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py", line 115, in main
+    leaner.train()
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/meta_learner.py", line 42, in train
+    task_q_loss = t.run(centralized_q=self.centralized_q)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcook_maddpg/task.py", line 148, in run
+    next_obs, rewards, self.done, info = self.env.step(action)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcooked_ai/src/overcooked_ai_py/env.py", line 62, in step
+    return self._get_observation(), reward, done, info
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcooked_ai/src/overcooked_ai_py/env.py", line 65, in _get_observation
+    return self.get_feature_state().reshape(len(self.agents), -1)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcooked_ai/src/overcooked_ai_py/env.py", line 71, in get_feature_state
+    return np.array(self.overcooked.featurize_state_mdp(self.overcooked.state))
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcooked_ai/src/overcooked_ai_py/mdp/overcooked_env.py", line 225, in featurize_state_mdp
+    return self.mdp.featurize_state(state, self.mlam, num_pots=num_pots)
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcooked_ai/src/overcooked_ai_py/mdp/overcooked_mdp.py", line 2133, in featurize_state
+    all_features = concat_dicts(all_features, make_closest_feature(i, player, "onion", self.get_onion_dispenser_locations() + counter_objects["onion"]))
+  File "/Users/stevenyuan/Documents/McGill/CPSL-Lab/Generalized_MARL/Generalized_MADDPG/overcooked_ai/src/overcooked_ai_py/mdp/overcooked_mdp.py", line 2045, in make_closest_feature

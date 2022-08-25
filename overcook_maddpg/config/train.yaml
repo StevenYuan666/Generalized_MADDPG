@@ -1,5 +1,5 @@
 defaults:
-    - agent: maddpg
+    - agent: mappo # maddpg
 
 # Experiment Settings
 env: asymmetric_advantages
