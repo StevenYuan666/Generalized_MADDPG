@@ -27,15 +27,19 @@ class MLPNetwork(nn.Module):
 
         self.fc1 = nn.Linear(input_dim, hidden_dim)
         self.fc2 = nn.Linear(hidden_dim, hidden_dim)
-        self.fc3 = nn.Linear(hidden_dim, out_dim)
+        self.fc3 = nn.Linear(hidden_dim, hidden_dim)
+        self.fc4 = nn.Linear(hidden_dim, hidden_dim)
+        self.fc5 = nn.Linear(hidden_dim, out_dim)
 
         self.activation = activation
 
         self.fc1.weight.data = fanin_init(self.fc1.weight.data.size())
         self.fc2.weight.data = fanin_init(self.fc2.weight.data.size())
+        self.fc3.weight.data = fanin_init(self.fc3.weight.data.size())
+        self.fc4.weight.data = fanin_init(self.fc4.weight.data.size())
 
         if constrain_out:
-            self.fc3.weight.data.uniform_(-0.003, 0.003)
+            self.fc5.weight.data.uniform_(-0.003, 0.003)
             self.out_fn = torch.tanh
         else:
             self.out_fn = lambda x: x
@@ -50,7 +54,9 @@ class MLPNetwork(nn.Module):
         # X = self.norm1(X)
         h1 = self.activation(self.fc1(X))
         h2 = self.activation(self.fc2(h1))
-        out = self.out_fn(self.fc3(h2))
+        h3 = self.activation(self.fc3(h2))
+        h4 = self.activation(self.fc4(h3))
+        out = self.out_fn(self.fc5(h4))
         return out
 
 
