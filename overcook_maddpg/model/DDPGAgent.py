@@ -67,6 +67,7 @@ class DDPGAgent(nn.Module):
             if explore:
                 action = gumbel_softmax(action, hard=True)
             else:
+                print(action)
                 action = onehot_from_logits(action)
 
             action = onehot_to_number(action)
