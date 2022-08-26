@@ -4,7 +4,7 @@ import hydra
 from task_sampler import TaskSampler
 from omegaconf import DictConfig
 from Centralized_q import Centralized_q
-
+import wandb
 
 class MetaLearner:
 
@@ -19,13 +19,15 @@ class MetaLearner:
         # self.target_centralized_q = Centralized_q(cfg=cfg, sampler=sampler)
         self.centralized_q_optim = torch.optim.Adam(self.centralized_q.parameters(), lr=self.outer_lr)
         self.train_step = 0
-        self.total_training_step = 10000
+        self.total_training_step = 2000
         self.update_times = 10000
         self.episode_limit = 500
         self.num_tasks = 4
         self.save_rate = 50
+        self.load_rate = 50
 
     def train(self):
+
         result = []
         for i in range(self.total_training_step):
             print("Meta Training " + str(i + 1) + " sampling " + str(self.num_tasks) + " tasks")
@@ -36,7 +38,8 @@ class MetaLearner:
                     for a in t.agent.agents:
                         if time_step == 0:
                             a.target_critic.load_state_dict(self.centralized_q.state_dict())
-                        a.critic.load_state_dict(self.centralized_q.state_dict())
+                        if time_step % self.load_rate == 0:
+                            a.critic.load_state_dict(self.centralized_q.state_dict())
                     # inner training
                     task_q_loss = t.run(time_step=time_step, centralized_q=self.centralized_q)
                     if total_q_loss is None:
@@ -46,13 +49,23 @@ class MetaLearner:
                             total_q_loss = task_q_loss
                     else:
                         total_q_loss = total_q_loss.add(task_q_loss)
+
+                train_rewards=[]
+                for t in tasks:
+                    train_rewards.append(t.episode_reward)
+
+                wandb.log({"asymmetric_advantages_train_rewards": train_rewards[0],
+                           "cramped_room_train_rewards": train_rewards[1],
+                           "coordination_ring_train_rewards": train_rewards[2],
+                           "counter_circuit_train_rewards": train_rewards[3],
+                           "Centralized_Q_Loss": total_q_loss})
+
                 if total_q_loss is not None:
                     self.centralized_q_optim.zero_grad()
                     total_q_loss.backward()
                     torch.nn.utils.clip_grad_norm_(self.centralized_q.parameters(), 0.5)
                     self.centralized_q_optim.step()
 
-                if time_step % 1000 == 0: print("total q loss:"+str(total_q_loss))
             returns = []
             for t in tasks:
                 r = t.evaluate()
@@ -66,6 +79,12 @@ class MetaLearner:
                 np.save("E:/Project/Generalized_MADDPG/overcook_maddpg/result/training_info.npy", np.array(result))
                 torch.save(self.centralized_q.state_dict(), 'E:/Project/Generalized_MADDPG/overcook_maddpg/result/centralized_q_params.pth')
                 print("and successfully saved")
+
+            wandb.log({"inner_batch_avg_validation_return": np.mean(returns),
+                       "asymmetric_advantages_validation_rewards": returns[0],
+                       "cramped_room_validation_rewards": returns[1],
+                       "coordination_ring_validation_rewards": returns[2],
+                       "counter_circuit_validation_rewards": returns[3]})
 
             print("Meta Update: " + str(i + 1), "\n\tinner_batch_avg_validation_return: " + str(np.mean(returns))
                   + " Corresponding return for [asymmetric_advantages, cramped_room, coordination_ring, counter_circuit]: " + str(
@@ -103,4 +122,7 @@ def main(cfg: DictConfig):
 
 
 if __name__ == '__main__':
+    wandb.init(project="Generalized_MADDPG", entity="aims-hign",
+               group="overcook_5_layer")
     main()
+    wandb.finish()

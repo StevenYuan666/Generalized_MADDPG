@@ -20,6 +20,7 @@ import hydra
 from omegaconf import DictConfig
 import os
 import numpy as np
+import wandb
 
 
 class Task(object):
@@ -95,6 +96,7 @@ class Task(object):
         self.eval_episode = 0
         self.episode_reward = 0
         self.episode_step = 0
+        self.whole_rewards = []
         self.done = False
 
 
@@ -105,8 +107,6 @@ class Task(object):
         for episode in range(self.cfg.num_eval_episodes):
             obs = self.env.reset()
             # episode_step = 0
-
-
             done = False
             episode_reward = 0
             while not done:

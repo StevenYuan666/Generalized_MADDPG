@@ -3,7 +3,7 @@ defaults:
 
 # Experiment Settings
 env: asymmetric_advantages
-episode_length: 2000
+episode_length: 1000
 discrete_action_space: true
 
 experiment: vanilla
