@@ -133,7 +133,7 @@ class MujocoMulti(MultiAgentEnv):
         return reward_n, done_n, info
 
     def get_obs(self):
-        """ Returns all agent observat3ions in a list """
+        """ Returns all agent observations in a list """
         obs_n = []
         for a in range(self.n_agents):
             obs_n.append(self.get_obs_agent(a))

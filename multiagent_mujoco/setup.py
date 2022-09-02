@@ -39,10 +39,10 @@ setup(
       ],
       extras_require=extras_deps,
       install_requires=[
-            "numpy>=1.22.3",
+            "numpy>=1.19.3",
             "gym==0.10.8",
             "mujoco-py>=2.1.2.14",
-            "scipy>=1.8.0",
+            "scipy>=1.5.0",
             "Jinja2>=3.0.3",
             "glfw>=2.5.1",
             "Cython>=0.29.28"

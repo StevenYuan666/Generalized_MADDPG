@@ -1,6 +1,6 @@
 from tqdm import tqdm
-from agent import Agent
-from common.replay_buffer import Buffer
+from mamujoco_maddpg.model.agent import Agent
+from mamujoco_maddpg.common.replay_buffer import Buffer
 import torch
 import os
 import numpy as np
@@ -40,10 +40,11 @@ class Runner:
                     action = agent.select_action(s[agent_id], self.noise, self.epsilon)
                     u.append(action)
                     actions.append(action)
-            for i in range(self.args.n_agents, self.args.n_players):
+            for i in range(self.args.n_agents):
                 actions.append([0, np.random.rand() * 2 - 1, 0, np.random.rand() * 2 - 1, 0])
-            s_next, r, done, info = self.env.step(actions)
-            self.buffer.store_episode(s[:self.args.n_agents], u, r[:self.args.n_agents], s_next[:self.args.n_agents])
+            r, done, info = self.env.step(actions)  # the env return reward_n, done_n, info
+            s_next = self.env.get_obs()  # info contains obs_n, reward_n, done_n, info_n
+            self.buffer.store_episode(s[:self.args.n_agents], u, r, s_next[:self.args.n_agents])
             s = s_next
             if self.buffer.current_size >= self.args.batch_size:
                 transitions = self.buffer.sample(self.args.batch_size)
@@ -58,6 +59,8 @@ class Runner:
                 plt.xlabel('episode * ' + str(self.args.evaluate_rate / self.episode_limit))
                 plt.ylabel('average returns')
                 plt.savefig(self.save_path + '/plt.png', format='png')
+                plt.close()
+
             self.noise = max(0.05, self.noise - 0.0000005)
             self.epsilon = max(0.05, self.epsilon - 0.0000005)
             
@@ -87,11 +90,12 @@ class Runner:
                     for agent_id, agent in enumerate(self.agents):
                         action = agent.select_action(s[agent_id], 0, 0)
                         actions.append(action)
-                for i in range(self.args.n_agents, self.args.n_players):
+                for i in range(self.args.n_agents):
                     actions.append([0, np.random.rand() * 2 - 1, 0, np.random.rand() * 2 - 1, 0])
-                s_next, r, done, info = self.env.step(actions)
-                rewards += r[0]
+                r, done, info = self.env.step(actions)
+                s_next = self.env.get_obs()
+                rewards += r
                 s = s_next
             returns.append(rewards)
-            # print('Returns is', rewards)
+            print('Returns is', rewards)
         return sum(returns) / self.args.evaluate_episodes
