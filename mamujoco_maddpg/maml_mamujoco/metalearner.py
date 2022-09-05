@@ -15,6 +15,10 @@ class MetaLearner:
         self.device = device
         self.centralized_q = Centralized_q(args=args, task_sampler=self.task_sampler).to(self.device)
         self.target_centralized_q = Centralized_q(args=args, task_sampler=self.task_sampler).to(self.device)
+        path = "/Users/songrui/Machine Learning/Generalized_MADDPG/mamujoco_maddpg/maml_mamujoco/MAML_result/centralized_q_params_0.pth"
+        if os.path.exists(path):
+            self.centralized_q.load_state_dict(torch.load(path))
+            self.target_centralized_q.load_state_dict(torch.load(path))
         self.centralized_q_optim = torch.optim.Adam(self.centralized_q.parameters(), lr=self.outer_lr)
         self.input_shape = self.centralized_q.input_shape
         # args.scenario_name = "simple_spread"
@@ -26,7 +30,7 @@ class MetaLearner:
         self.update_times = 1000
         self.episode_limit = 1000
         self.num_tasks = 4
-        self.save_rate = 100
+        self.save_rate = 10
         self.load_rate = 10
         self.save_path = "./MAML_result"
         if not os.path.exists(self.save_path):
@@ -69,7 +73,7 @@ class MetaLearner:
                     self.centralized_q_optim.zero_grad()
                     total_q_loss.backward()
                     self.centralized_q_optim.step()
-                print(c)
+
 
             returns = []
             for t in tasks:

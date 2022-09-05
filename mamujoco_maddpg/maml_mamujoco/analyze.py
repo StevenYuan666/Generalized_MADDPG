@@ -13,8 +13,11 @@ def smooth(scalars, weight=0.6):
 
 
 def analyze():
-    result = np.load("/Users/songrui/Machine Learning/Generalized_MADDPG/mamujoco_maddpg/maml_mamujoco/MAML_result/training_info.npy")
+    result = np.load("/Users/songrui/Machine Learning/Generalized_MADDPG/mamujoco_maddpg/maml_mamujoco/MAML_result/training_info_0.npy").tolist()
+    result_1 = np.load(
+        "/Users/songrui/Machine Learning/Generalized_MADDPG/mamujoco_maddpg/maml_mamujoco/MAML_result/training_info.npy").tolist()
     # inner_result = np.load("./MAML_result/inner_returns.npy")
+    result += result_1
     x = []
     inner_x=[]
     returns = []
@@ -23,8 +26,8 @@ def analyze():
     a_loss = []
     q_loss = []
     meta_q_loss = []
-    for ele in result:
-        x.append(ele[0])
+    for i, ele in enumerate(result):
+        x.append(i)
         returns.append(ele[1])
         smooth_returns.append(ele[1])
         # a_loss.append(ele[2])
