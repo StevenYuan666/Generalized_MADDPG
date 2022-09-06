@@ -53,13 +53,13 @@ if __name__ == '__main__':
                         action = agent.select_action(s[agent_id], runner.noise, runner.epsilon)
                         u.append(action)
                         actions.append(action)
-                for i in range(runner.args.n_agents, runner.args.n_players):
+                for i in range(runner.args.n_agents):
                     actions.append([0, np.random.rand() * 2 - 1, 0, np.random.rand() * 2 - 1, 0])
                 r, done, info = runner.env.step(actions)
                 s_next = runner.env.get_obs()
                 runner.buffer.store_episode(s[:runner.args.n_agents], u, r, s_next[:runner.args.n_agents])
                 s = s_next
-                train_rewards += r[0]
+                train_rewards += r
                 if runner.buffer.current_size >= runner.args.batch_size:
                     transitions = runner.buffer.sample(runner.args.batch_size)
                     for agent in runner.agents:
