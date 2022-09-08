@@ -1,5 +1,5 @@
 from runner import Runner
-from overcook_maddpg.overcook_runner import Workspace
+
 from common.arguments import get_args
 from common.utils import make_env, make_overcook_env
 import numpy as np

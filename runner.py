@@ -67,7 +67,11 @@ class Runner:
 
             else:
                 index = str(self.args.run_index)
-                np.save(self.save_path + '/no_meta_'+ index +'/returns.pkl', returns)
+                no_meta_save_path = self.save_path + '/no_meta_' + index + '/returns.pkl'
+                if not os.path.exists(no_meta_save_path):
+                    os.makedirs(no_meta_save_path)
+                np.save(no_meta_save_path, returns)
+
 
 
     def evaluate(self):

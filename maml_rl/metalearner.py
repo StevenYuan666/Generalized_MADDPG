@@ -5,7 +5,7 @@ import numpy as np
 import common.utils as me
 import time
 from maml_rl.centralized_q import Centralized_q
-from task import Task
+from maml_rl.task import Task
 
 
 class MetaLearner:
